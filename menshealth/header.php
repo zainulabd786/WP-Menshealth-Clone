@@ -37,15 +37,7 @@
           <?php the_custom_header_markup(); ?>
         </div>
         <!-- End cover story video -->
-        <div class="cover-story-details-wrapper d-flex justify-content-center">
-        <div class="cover-story-details p-4 text-center">
-          <span class="cover-story-label">
-            FITNESS
-          </span>
-            <h2 class="cover-story-hed text-white"><a class="cover-story-hed-container" href="#">How to Become the Kettlebell King</a></h2>
-        </div>
-        <!-- end cover-story-details -->
-      </div>
+        <?php do_action("get_header_media_post_title"); ?>
       <!-- end cover-story-details wrapper -->
       </div>
       <!-- end cover story -->
@@ -83,7 +75,14 @@
         <div class="menu-search">
           <a href="#" class="nav-search-button"><i class="fas fa-search"></i> search </a>
         </div>
-        <ul class="nav flex-column">
+        <?php wp_nav_menu(
+              array(
+                'theme_location' => 'top',
+                'menu_id'        => 'top-menu',
+                'menu_class'     => 'nav flex-column'
+              )
+            ); ?>
+        <!-- <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link" href="#">Active</a>
           </li>
@@ -96,7 +95,7 @@
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
           </li>
-        </ul>
+        </ul> -->
       </nav>
     </header>
     <main class="body-container-wrapper">

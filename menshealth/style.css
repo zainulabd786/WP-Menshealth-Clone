@@ -8249,3 +8249,29 @@ th {
 /*# sourceMappingURL=theme-style.css.map */
 
 
+.custom-logo-link {
+  display: inline-block;
+  padding-right: 1em;
+  vertical-align: middle;
+  width: auto;
+}
+
+.custom-logo-link img {
+  display: inline-block;
+  max-height: 22px;
+  width: auto;
+}
+
+body.home.title-tagline-hidden.has-header-image .custom-logo-link img,
+body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
+  max-height: 200px;
+  max-width: 100%;
+}
+
+.custom-logo-link a:hover,
+.custom-logo-link a:focus {
+  opacity: 0.9;
+}
+
+
+

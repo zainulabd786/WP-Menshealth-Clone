@@ -671,3 +671,40 @@ require get_parent_theme_file_path( '/inc/icon-functions.php' );
 
 
 
+add_action( 'after_setup_theme', 'register_side_menu' );
+function register_side_menu() {
+  register_nav_menu( 'side-menu', __( 'Side Menu', 'twentyseventeen' ) );
+}
+
+
+function get_header_media_post_title() {
+	$args = array(
+		'post_type' => 'post',
+        'post_status' => 'publish',
+        'posts_per_page'=>1,
+        'order'=>'DESC',
+        'orderby'=>'ID'
+    );
+
+    $the_query = new WP_Query( $args );
+
+    // The Loop
+    if ( $the_query->have_posts() ) {
+        $not_in_next_three = array();
+        while ( $the_query->have_posts() ) {
+            $the_query->the_post(); ?>
+        	<div class="cover-story-details-wrapper d-flex justify-content-center">
+		        <div class="cover-story-details p-4 text-center">
+		          <span class="cover-story-label">
+		            <?= get_the_category()[0]->name; ?>
+		          </span>
+		            <h2 class="cover-story-hed text-white"><a class="cover-story-hed-container" href="#"><?= get_the_title() ?></a></h2>
+		        </div>
+		        <!-- end cover-story-details -->
+		    </div><?php
+        }
+
+    }
+    wp_reset_postdata();
+}
+add_action("get_header_media_post_title", "get_header_media_post_title");
