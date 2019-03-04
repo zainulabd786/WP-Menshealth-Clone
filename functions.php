@@ -354,18 +354,6 @@ function twentyseventeen_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-
-	register_sidebar(
-		array(
-			'name'          => __( 'Footer 2', 'twentyseventeen' ),
-			'id'            => 'sidebar-3',
-			'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
 }
 add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
 
@@ -679,6 +667,10 @@ add_action( 'after_setup_theme', 'register_footer_top' );
 function register_footer_top() {
   register_nav_menu( 'footer-top', __( 'Footer Top', 'twentyseventeen' ) );
 }
+add_action( 'after_setup_theme', 'register_footer_bottom' );
+function register_footer_bottom() {
+  register_nav_menu( 'footer-bottom', __( 'Footer Bottom', 'twentyseventeen' ) );
+}
 
 
 function get_header_media_post_title() {
@@ -712,3 +704,61 @@ function get_header_media_post_title() {
     wp_reset_postdata();
 }
 add_action("get_header_media_post_title", "get_header_media_post_title");
+
+
+
+
+
+function za_theme_activation(){
+	$theme_opts = get_option("za_opts");
+	if(!$theme_opts){
+		$opts = array(
+			"pin_video" => ''
+		);
+		add_option('za_opts', $opts);
+	}
+
+}
+add_action("after_switch_theme", "za_theme_activation");
+
+
+function za_admin_menus(){
+	add_menu_page(
+		"Theme Options",
+		"Theme Options",
+		"manage_options",
+		"za_theme_opts",
+		"za_theme_opts_page"
+	);
+}
+add_action("admin_menu", "za_admin_menus");
+
+function za_theme_opts_page(){ ?>
+	<div class="wrap">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="panel-title"><?= _e('Theme Settings', 'twentyseventeen'); ?></h3>
+			</div>
+			<div class="panel-body">
+				<form method="post" action="admin-post.php">
+					<input type="hidden" name="za_save_options">
+					<?php wp_nonce_field('za_options_verify'); ?>
+
+				</form>
+			</div>
+		</div>
+		<div class="form-group">
+			<label>Pinned Video</label>
+			<input type="text" name="za_pinned_video_url">
+		</div>
+	</div><?php
+}
+
+function za_scripts_admin(){
+	wp_enqueue_style("bootstrap-css", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
+}
+
+function za_admin_init(){
+	add_action("admin_enqueue_scripts", "za_scripts_admin");
+}
+add_action("za_admin_init", "za_admin_init");

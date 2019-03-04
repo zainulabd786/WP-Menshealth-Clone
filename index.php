@@ -17,55 +17,190 @@
 
 get_header(); ?>
 
-<div class="wrap">
-	<?php if ( is_home() && ! is_front_page() ) : ?>
-		<header class="page-header">
-			<h1 class="page-title"><?php single_post_title(); ?></h1>
-		</header>
-	<?php else : ?>
-	<header class="page-header">
-		<h2 class="page-title"><?php _e( 'Posts', 'twentyseventeen' ); ?></h2>
-	</header>
-	<?php endif; ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<?php
-			if ( have_posts() ) :
-
-				/* Start the Loop */
-				while ( have_posts() ) :
-					the_post();
-
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/post/content', get_post_format() );
-
-				endwhile;
-
-				the_posts_pagination(
-					array(
-						'prev_text'          => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-						'next_text'          => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
-					)
+	<div class="top-listed-post-wrapper mb-4">
+		<?php 
+			$args = array(
+				    'post_type' => 'post',
+				    'posts_per_page' => '5',
 				);
+				$query = new WP_Query( $args );
+				if ( $query->have_posts() ) { 
+          			while ( $query->have_posts() ) {
+			 
+			            $query->the_post(); ?>
 
-			else :
+			           	<div class="top-listed-post-items">
+				            <a href="#" class="top-listed-post-link w-100">
+				              <span class="top-listed-post-items-image post-image-hover d-block">
+				               <?php the_post_thumbnail('medium'); ?>
+				              </span>
+				              <!-- end top listed-post items image -->
+				              <span class="top-listed-post-title d-flex align-items-start">
+				                <?= get_the_title(); ?>
+				              </span>
+				              <!-- end top listed post title -->
+				            </a>
+				            <!-- end top listed post link -->
+				          </div>
+			 
+			        <?php } // end while 
+			 
+				} // end if
+				wp_reset_postdata();
+		?>      
+          <!-- end top listed post items -->
+        </div>
 
-				get_template_part( 'template-parts/post/content', 'none' );
+	<div class="custom-video-wrapper py-4">
+          <div class="custom-video-continer">
+            <img class="img-fluid" src="image/lighthouse.jpg" alt="">
+          </div>
+          <!-- end custom video continer -->
+          <div class="custom-video-content text-center px-md-4 py-4">
+            <a class="custom-video-label mx-auto btn btn-primary" href="#">ENTERTAINMENT</a>
+            <h2 class="custom-promo-title py-3 m-0"><a href="#">How Tom Hopper Stays in Superhero Shape</a></h2>
+            <div class="byline byline-listing"><span class="byline-author">By <a class="byline-name" href="#">Paul
+                  Schrodt</a></span>
+            </div>
+          </div>
+          <!-- end custom video content -->
+    </div>
 
-			endif;
-			?>
+    <div class="post-full-width mt-4">
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+          <?php
+          	$categories = get_categories(); 
+ 
+		    foreach ( $categories as $category ) {
+		 		$args = array(
+				    'cat' => $category->term_id,
+				    'post_type' => 'post',
+				    'posts_per_page' => '1',
+				);
+				$query = new WP_Query( $args );
+				if ( $query->have_posts() ) { 
+          			while ( $query->have_posts() ) {
+			 
+			            $query->the_post();
+			            $cat_link = get_category_link($category->cat_ID) ?>
+
+			            <div id="post-<?php the_ID(); ?>" class="card">
+				            <a href="#" class="card-image-container"><?php the_post_thumbnail( 'large' ); ?></a>
+				            <div class="card-body">
+				              <div class="post-meta-item-wrapper">
+				                <div class="post-meta-item">
+				                  <a href="<?= $cat_link ?>" class="btn btn-sm btn-"><?php echo $category->name; ?></a>
+				                </div>
+				                <!-- end post meta item -->
+				              </div>
+				              <!-- end post meta item -->
+				              <h4 class="card-post-title"><a class="card-post-link" href="<?= the_permalink() ?>"><?= get_the_title(); ?></a></h4>
+				              <p class="card-post-text"><?= get_the_excerpt(); ?></p>
+				              <div class="byline byline-listing"><span class="byline-author">By <a class="byline-name" href="#"><?= get_the_author(); ?></a></span>
+				              </div>
+				            </div>
+				            <!-- end card body -->
+				          </div>
+			 
+			        <?php } // end while 
+			 
+				} // end if
+		    }
+			// Use reset to restore original query.
+			wp_reset_postdata();
+          ?>
+
+		<div class="collection-breaker-item-wrapper my-5">
+		            <div class="collection-breaker-header py-3">
+		              <h2><a href="#" class="collection-heading-title">Heart Health HQ</a></h2>
+		            </div>
+		            <div class="collection-breaker-container row no-gutter"><?php
+
+		            	$args = array(
+						    'category' => 'heart-health-hq',
+						    'post_type' => 'post',
+						    'posts_per_page' => '3',
+						);
+						$counter = 1;
+						$query = new WP_Query( $args );
+						if ( $query->have_posts() ) { 
+		          			while ( $query->have_posts() ) {
+					 
+					            $query->the_post(); ?>
+
+					            <div class="col-12 col-md-4 <?= $counter === 3 ? '' : 'mb-4 mb-md-0' ?> p-0">
+					                <div class="collection-breaker-item">
+					                  <div class="collection-breaker-image">
+					                    <a href="#" class="d-block">
+					                      <?php the_post_thumbnail('large'); ?>
+					                    </a>
+					                  </div>
+					                  <!-- end collection-breaker-image -->
+					                  <div class="collection-breaker-content text-center">
+					                    <div class="collection-breaker-title mx-auto p-3">
+					                      <h5><a href="<?= the_permalink() ?>" class="d-block"><?= get_the_title(); ?></a> </h5>
+					                    </div>
+					                    <!-- end collection-breaker-title -->
+					                  </div>
+					                  <!-- end collection-breaker-content -->
+					                </div>
+					                <!-- end collection-breaker-item -->
+					              </div>
+					             <!-- end col -->
+					           
+					 
+					        <?php $counter++; } // end while 
+					 
+						}
+						wp_reset_postdata(); ?>
+		            </div>
+		            <!-- end collection-breaker-container  -->
+
+		</div>
+
+		<?php
+          	$categories = get_categories(); 
+ 
+		    foreach ( $categories as $category ) {
+		 		$args = array(
+				    'cat' => $category->term_id,
+				    'post_type' => 'post',
+				    'posts_per_page' => '1',
+				);
+				$query = new WP_Query( $args );
+				if ( $query->have_posts() ) { 
+          			while ( $query->have_posts() ) {
+			 
+			            $query->the_post();
+			            $cat_link = get_category_link($category->cat_ID) ?>
+
+			            <div id="post-<?php the_ID(); ?>" class="card">
+				            <a href="#" class="card-image-container"><?php the_post_thumbnail( 'large' ); ?></a>
+				            <div class="card-body">
+				              <div class="post-meta-item-wrapper">
+				                <div class="post-meta-item">
+				                  <a href="<?= $cat_link ?>" class="btn btn-sm btn-"><?php echo $category->name; ?></a>
+				                </div>
+				                <!-- end post meta item -->
+				              </div>
+				              <!-- end post meta item -->
+				              <h4 class="card-post-title"><a class="card-post-link" href="<?= the_permalink() ?>"><?= get_the_title(); ?></a></h4>
+				              <p class="card-post-text"><?= get_the_excerpt(); ?></p>
+				              <div class="byline byline-listing"><span class="byline-author">By <a class="byline-name" href="#"><?= get_the_author(); ?></a></span>
+				              </div>
+				            </div>
+				            <!-- end card body -->
+				          </div>
+			 
+			        <?php } // end while 
+			 
+				} // end if
+		    }
+			// Use reset to restore original query.
+			wp_reset_postdata();
+          ?>
+
+    </div><!-- post-full-width mt-4 -->
 
 <?php
 get_footer();

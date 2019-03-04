@@ -48,17 +48,6 @@
                   'menu_class'     => 'nav'
                 )
               ); ?>
-              <!-- <ul class="nav">
-                <li class="nav-item"><a href="#" class="nav-link">Newsletter</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Customer Care</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">E-prints, Reprints</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Advertise</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Subscribe</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Give a Gift</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Manage Email Preferences</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Other Hearst Subscriptions</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Media Kit</a></li>
-              </ul> -->
             </div>
             <!-- end footer menu -->
           </div>
@@ -66,22 +55,24 @@
         </div>
         <!-- end row -->
         <div class="row">
-          <div class="col-12 mb-4 mt-0 mt-lg-4">
-            <p>
-              <span class="footer-network-tagline d-block">A Part of Hearst Digital Media</span>
+          <div class="col-12 mb-4 mt-0 mt-lg-4"><?php
+            if ( is_active_sidebar( 'sidebar-2' ) ) {
+              dynamic_sidebar( 'sidebar-2' );
+            }?>
+            <!--<p>
+               <span class="footer-network-tagline d-block">A Part of Hearst Digital Media</span>
               <span class="footer-affiliate-disclosure d-block">
                 Men's Health participates in various affiliate marketing programs, which means we may get paid
                 commissions on editorially chosen products purchased through our links to retailer sites.
-              </span><span class="copyright d-block">©2019 Hearst Magazine Media, Inc. All Rights Reserved.</span> </p>
+              </span><span class="copyright d-block">©2019 Hearst Magazine Media, Inc. All Rights Reserved.</span> </p> -->
           </div>
           <div class="col-12 col-lg-12">
-            <ul class="nav">
-              <li class="nav-item"><a href="#" class="nav-link">Privacy Notice</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Your California Privacy Rights</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Interest-Based Ads</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Terms of Use</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Site Map</a></li>
-            </ul>
+            <?php wp_nav_menu(
+                array(
+                  'theme_location' => 'footer-bottom',
+                  'menu_class'     => 'nav'
+                )
+              ); ?>
           </div>
         </div>
       </div>
@@ -104,7 +95,7 @@
       </div>
     </div>
   </div>
-  </div>
+</div>
   <!-- end page wrapper -->
 
   <?php wp_footer(); ?>
