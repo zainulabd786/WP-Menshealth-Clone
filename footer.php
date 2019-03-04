@@ -25,6 +25,7 @@
             <div class="footer-logo pt-2">
               <a href="#" class="mb-4 d-block">
                 <!-- LOGO Goes Here -->
+                <?php the_custom_logo(); ?>
               </a>
             </div>
             <!-- end footer logo -->
@@ -41,7 +42,13 @@
           <!-- end col -->
           <div class="col-12 col-lg-9 mb-4 mb-md-0">
             <div class="footer-menu">
-              <ul class="nav">
+              <?php wp_nav_menu(
+                array(
+                  'theme_location' => 'footer-top',
+                  'menu_class'     => 'nav'
+                )
+              ); ?>
+              <!-- <ul class="nav">
                 <li class="nav-item"><a href="#" class="nav-link">Newsletter</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Customer Care</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">E-prints, Reprints</a></li>
@@ -51,7 +58,7 @@
                 <li class="nav-item"><a href="#" class="nav-link">Manage Email Preferences</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Other Hearst Subscriptions</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Media Kit</a></li>
-              </ul>
+              </ul> -->
             </div>
             <!-- end footer menu -->
           </div>

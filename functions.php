@@ -675,6 +675,10 @@ add_action( 'after_setup_theme', 'register_side_menu' );
 function register_side_menu() {
   register_nav_menu( 'side-menu', __( 'Side Menu', 'twentyseventeen' ) );
 }
+add_action( 'after_setup_theme', 'register_footer_top' );
+function register_footer_top() {
+  register_nav_menu( 'footer-top', __( 'Footer Top', 'twentyseventeen' ) );
+}
 
 
 function get_header_media_post_title() {
