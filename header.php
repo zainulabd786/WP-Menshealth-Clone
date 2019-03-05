@@ -26,21 +26,23 @@
 <div id="main-page-wrapper" class="page-wrapper">
 
 
-	<header id="header-container" class="header-container-wrapper">
-      <div class="cover-story-wrapper position-relative">
-        <div class="cover-story-logo position-absolute pt-4 pl-4">
-          <a href="#" class="cover-story-logo-link">
-            <?php the_custom_logo(); ?>
-          </a>
+	<header id="header-container" class="header-container-wrapper"><?php
+      if (is_front_page()) { ?>
+        <div class="cover-story-wrapper position-relative">
+          <div class="cover-story-logo position-absolute pt-4 pl-4">
+            <a href="#" class="cover-story-logo-link">
+              <?php the_custom_logo(); ?>
+            </a>
+          </div>
+          <div class="cover-story-video">
+            <?php the_custom_header_markup(); ?>
+          </div>
+          <!-- End cover story video -->
+          <?php do_action("get_header_media_post_title"); ?>
+        <!-- end cover-story-details wrapper -->
         </div>
-        <div class="cover-story-video">
-          <?php the_custom_header_markup(); ?>
-        </div>
-        <!-- End cover story video -->
-        <?php do_action("get_header_media_post_title"); ?>
-      <!-- end cover-story-details wrapper -->
-      </div>
-      <!-- end cover story -->
+        <!-- end cover story --> <?php 
+      } ?>
       <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container px-0">
           <a class="menu-toggler text-white mr-4"><i class="fas fa-bars fa-2x"></i></a>
