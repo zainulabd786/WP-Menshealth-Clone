@@ -30,7 +30,7 @@ get_header(); ?>
 			            $query->the_post(); ?>
 
 			           	<div class="top-listed-post-items">
-				            <a href="#" class="top-listed-post-link w-100">
+				            <a href="<?= the_permalink(); ?>" class="top-listed-post-link w-100">
 				              <span class="top-listed-post-items-image post-image-hover d-block">
 				               <?php the_post_thumbnail('medium'); ?>
 				              </span>
