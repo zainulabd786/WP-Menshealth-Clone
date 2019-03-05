@@ -78,23 +78,7 @@
       </div>
   </div>
   </footer>
-  <div id="searchoverlay" class="search-overlay">
-    <div class="search-overlay-inner">
-      <a href="#">
-        <span class="search-overlay-close-button">
-          <i class="fas fa-times"></i>
-        </span>
-      </a>
-      <form class="search-form search-overlay-form" action="/search/">
-        <input type="search" id="search-input" class="search-input" name="q" value="" placeholder="search" autocomplete="off">
-        <label class="search-label" for="search-input">Type keyword(s) to search</label>
-      </form>
-      <div class="search-overlay-autosuggest">
-        <ul class="search-overlay-autosuggest-list">
-        </ul>
-      </div>
-    </div>
-  </div>
+  <?php get_search_form() ?>
 </div>
   <!-- end page wrapper -->
 

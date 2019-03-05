@@ -439,6 +439,9 @@ function twentyseventeen_scripts() {
 	// Theme block stylesheet.
 	wp_enqueue_style( 'twentyseventeen-block-style', get_theme_file_uri( '/assets/css/blocks.css' ), array( 'twentyseventeen-style' ), '1.1' );
 
+
+	wp_enqueue_style( 'font-awesome', "https://use.fontawesome.com/releases/v5.7.2/css/all.css" );
+
 	//custom js
 	wp_enqueue_script( 'jQuery', get_theme_file_uri( '/assets/js/plugins/jquery.min.js' ), array() );
 	wp_enqueue_script( 'custom-js', get_theme_file_uri( '/assets/js/script.js' ), array("jQuery") );

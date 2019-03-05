@@ -14,7 +14,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-	<header class="entry-header">
 		<div class="post-full-width mt-4">
           <div class="post-heading">
             <h3 class="inner-post-title"><?= get_the_title(); ?></h3>
