@@ -718,40 +718,40 @@ function wptutsplus_customize_register( $wp_customize ) {
 
 	$txtcolors[] = array(
 	    'slug'=>'main_color', 
-	    'default' => '#000',
+	    'default' => '#e94114',
 	    'label' => 'Main Color'
 	);
 
 	$txtcolors[] = array(
 	    'slug'=>'main_text_color', 
-	    'default' => '#000',
+	    'default' => '#fff',
 	    'label' => 'Main Text Color'
 	);
 	 
 	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
 	$txtcolors[] = array(
 	    'slug'=>'heading_color', 
-	    'default' => '#666',
+	    'default' => '#000',
 	    'label' => 'Heading Color'
 	);
 
 	$txtcolors[] = array(
 	    'slug'=>'text_color', 
-	    'default' => '#666',
+	    'default' => '#000',
 	    'label' => 'Text Color'
 	);
 	 
 	// link color
 	$txtcolors[] = array(
 	    'slug'=>'link_color', 
-	    'default' => '#008AB7',
+	    'default' => '#000',
 	    'label' => 'Link Color'
 	);
 	 
 	// link color ( hover, active )
 	$txtcolors[] = array(
 	    'slug'=>'hover_link_color', 
-	    'default' => '#9e4059',
+	    'default' => '#e94114',
 	    'label' => 'Link Color (on hover)'
 	);
 
@@ -803,11 +803,15 @@ function wptutsplus_customize_colors() {
 	****************************************/
 	?>
 	<style>
-	 
-	 .bg-primary{
-	 	background-color: <?= $main_color; ?>
-	 } 
-	 
+	 :root {
+	/* Theme variable */
+	--primary: <?= $main_color; ?>;
+	--main_text_color: <?= $main_text_color; ?>;
+	--heading_color: <?= $heading_color; ?>;
+	--text_color: <?= $text_color; ?>;
+	--link_color: <?= $link_color; ?>;
+	--hover_link_color: <?= $hover_link_color; ?>;
+}
 	</style>
 	     
 	<?php
