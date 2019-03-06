@@ -4657,31 +4657,31 @@ a.close.disabled {
   vertical-align: text-top !important; }
 
 .bg-primary {
-  background-color: #e94114 !important; }
+  background-color: #e94114; }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #ba3410 !important; }
+  background-color: #ba3410; }
 
 .bg-secondary {
-  background-color: #fff !important; }
+  background-color: #fff ; }
 
 a.bg-secondary:hover, a.bg-secondary:focus,
 button.bg-secondary:hover,
 button.bg-secondary:focus {
-  background-color: #e6e6e6 !important; }
+  background-color: #e6e6e6 ; }
 
 .bg-success {
-  background-color: #4BBF73 !important; }
+  background-color: #4BBF73 ; }
 
 a.bg-success:hover, a.bg-success:focus,
 button.bg-success:hover,
 button.bg-success:focus {
-  background-color: #389f5c !important; }
+  background-color: #389f5c ; }
 
 .bg-info {
-  background-color: #1F9BCF !important; }
+  background-color: #1F9BCF ; }
 
 a.bg-info:hover, a.bg-info:focus,
 button.bg-info:hover,

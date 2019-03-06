@@ -15,7 +15,7 @@
 function twentyseventeen_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	//$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	$wp_customize->selective_refresh->add_partial(
 		'blogname',
@@ -35,25 +35,25 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	/**
 	 * Custom colors.
 	 */
-	$wp_customize->add_setting(
+	/*$wp_customize->add_setting(
 		'colorscheme',
 		array(
 			'default'           => 'light',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'twentyseventeen_sanitize_colorscheme',
 		)
-	);
+	);*/
 
-	$wp_customize->add_setting(
+	/*$wp_customize->add_setting(
 		'colorscheme_hue',
 		array(
 			'default'           => 250,
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'absint', // The hue is stored as a positive integer.
 		)
-	);
+	);*/
 
-	$wp_customize->add_control(
+	/*$wp_customize->add_control(
 		'colorscheme',
 		array(
 			'type'     => 'radio',
@@ -66,9 +66,9 @@ function twentyseventeen_customize_register( $wp_customize ) {
 			'section'  => 'colors',
 			'priority' => 5,
 		)
-	);
+	);*/
 
-	$wp_customize->add_control(
+	/*$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
 			'colorscheme_hue',
@@ -78,12 +78,12 @@ function twentyseventeen_customize_register( $wp_customize ) {
 				'priority' => 6,
 			)
 		)
-	);
+	);*/
 
 	/**
 	 * Theme options.
 	 */
-	$wp_customize->add_section(
+	/*$wp_customize->add_section(
 		'theme_options',
 		array(
 			'title'    => __( 'Theme Options', 'twentyseventeen' ),
@@ -98,9 +98,9 @@ function twentyseventeen_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'twentyseventeen_sanitize_page_layout',
 			'transport'         => 'postMessage',
 		)
-	);
+	);*/
 
-	$wp_customize->add_control(
+	/*$wp_customize->add_control(
 		'page_layout',
 		array(
 			'label'           => __( 'Page Layout', 'twentyseventeen' ),
@@ -113,7 +113,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 			),
 			'active_callback' => 'twentyseventeen_is_view_with_layout_option',
 		)
-	);
+	);*/
 
 	/**
 	 * Filter number of front page sections in Twenty Seventeen.

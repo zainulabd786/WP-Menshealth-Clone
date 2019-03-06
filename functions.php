@@ -424,7 +424,7 @@ function twentyseventeen_colors_css_wrap() {
 	</style>
 	<?php
 }
-add_action( 'wp_head', 'twentyseventeen_colors_css_wrap' );
+//add_action( 'wp_head', 'twentyseventeen_colors_css_wrap' );
 
 /**
  * Enqueues scripts and styles.
@@ -710,9 +710,115 @@ add_action("get_header_media_post_title", "get_header_media_post_title");
 
 
 
+function wptutsplus_customize_register( $wp_customize ) {
+
+	$wp_customize->add_section( 'textcolors' , array(
+	    'title' =>  'Color Scheme',
+	) );
+
+	$txtcolors[] = array(
+	    'slug'=>'main_color', 
+	    'default' => '#000',
+	    'label' => 'Main Color'
+	);
+
+	$txtcolors[] = array(
+	    'slug'=>'main_text_color', 
+	    'default' => '#000',
+	    'label' => 'Main Text Color'
+	);
+	 
+	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
+	$txtcolors[] = array(
+	    'slug'=>'heading_color', 
+	    'default' => '#666',
+	    'label' => 'Heading Color'
+	);
+
+	$txtcolors[] = array(
+	    'slug'=>'text_color', 
+	    'default' => '#666',
+	    'label' => 'Text Color'
+	);
+	 
+	// link color
+	$txtcolors[] = array(
+	    'slug'=>'link_color', 
+	    'default' => '#008AB7',
+	    'label' => 'Link Color'
+	);
+	 
+	// link color ( hover, active )
+	$txtcolors[] = array(
+	    'slug'=>'hover_link_color', 
+	    'default' => '#9e4059',
+	    'label' => 'Link Color (on hover)'
+	);
+
+	// add the settings and controls for each color
+	foreach( $txtcolors as $txtcolor ) {
+	 
+	    // SETTINGS
+	    $wp_customize->add_setting(
+	        $txtcolor['slug'], array(
+	            'default' => $txtcolor['default'],
+	            'type' => 'option', 
+	            'capability' => 
+	            'edit_theme_options'
+	        )
+	    );
+	    // CONTROLS
+	    $wp_customize->add_control(
+	        new WP_Customize_Color_Control(
+	            $wp_customize,
+	            $txtcolor['slug'], 
+	            array('label' => $txtcolor['label'], 
+	            'section' => 'textcolors',
+	            'settings' => $txtcolor['slug'])
+	        )
+	    );
+	}
+ 
+}
+add_action( 'customize_register', 'wptutsplus_customize_register' );
+
+function wptutsplus_customize_colors() {
+	 /**********************
+		text colors
+		**********************/
+	
+	$main_color = get_option( 'main_color' );
+
+	$main_text_color = get_option( 'main_text_color' );
+	
+	$heading_color = get_option( 'heading_color' );
+
+	$text_color = get_option( 'text_color' );
+	
+	$link_color = get_option( 'link_color' );
+	
+	$hover_link_color = get_option( 'hover_link_color' );
+	/****************************************
+	styling
+	****************************************/
+	?>
+	<style>
+	 
+	 .bg-primary{
+	 	background-color: <?= $main_color; ?>
+	 } 
+	 
+	</style>
+	     
+	<?php
+}
+add_action( 'wp_head', 'wptutsplus_customize_colors' );
 
 
-function za_theme_activation(){
+
+
+
+/*function za_theme_activation(){
 	$theme_opts = get_option("za_opts");
 	if(!$theme_opts){
 		$opts = array(
@@ -764,4 +870,4 @@ function za_scripts_admin(){
 function za_admin_init(){
 	add_action("admin_enqueue_scripts", "za_scripts_admin");
 }
-add_action("za_admin_init", "za_admin_init");
+add_action("za_admin_init", "za_admin_init");*/
