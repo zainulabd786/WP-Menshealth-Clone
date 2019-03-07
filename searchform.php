@@ -12,9 +12,9 @@
 
 <?php $unique_id = esc_attr( twentyseventeen_unique_id( 'search-form-' ) ); ?>
 
-
+	
+<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<div id="searchoverlay" class="search-overlay">
-		<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	    <div class="search-overlay-inner">
 	      <a href="#">
 	        <span class="search-overlay-close-button">
@@ -30,6 +30,6 @@
 	        </ul>
 	      </div>
 	    </div>
-		</form>
   	</div>
+</form>
 
