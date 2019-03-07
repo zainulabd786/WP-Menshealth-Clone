@@ -11195,6 +11195,17 @@ th {
   overflow: hidden;
 }
 
+.cover-story-wrapper #wp-custom-header-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+}
+
 .cover-story-wrapper .cover-story-details-wrapper {
   position: absolute;
   bottom: 25px;
@@ -11442,6 +11453,7 @@ th {
   text-transform: uppercase;
   opacity: 1;
   padding: 0.625rem 0;
+  display: inline-block;
 }
 
 .sidebar-menu a:hover {
