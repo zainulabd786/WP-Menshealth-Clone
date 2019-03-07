@@ -11495,3 +11495,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 .custom-logo-link a:focus {
   opacity: 0.9;
 }
+
+.wp-a11y-speak-region{
+  display: none!important;
+}
