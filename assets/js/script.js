@@ -43,4 +43,4 @@ let onResize = function () {
   let getHeaderHeigt = $('#main-navbar').outerHeight();
   $('.body-container-wrapper').css('padding-top', getHeaderHeigt)
 }
-$(window).on('resize ready', onResize);
+$(window, document).on('resize ready load', onResize);
