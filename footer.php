@@ -29,14 +29,14 @@
               </a>
             </div>
             <!-- end footer logo -->
-            <div class="footer-social-link">
+            <!-- <div class="footer-social-link">
               <ul class="nav">
                 <li class="nav-item"><a href="#" class="nav-link"><i class="fab fa-facebook-f fa-1x"></i></a></li>
                 <li class="nav-item"><a href="#" class="nav-link"><i class="fab fa-instagram fa-1x"></i></a></li>
                 <li class="nav-item"><a href="#" class="nav-link"><i class="fab fa-twitter fa-1x"></i></a></li>
                 <li class="nav-item"><a href="#" class="nav-link"><i class="fab fa-google fa-1x"></i></a></li>
               </ul>
-            </div>
+            </div> -->
             <!-- end social link -->
           </div>
           <!-- end col -->

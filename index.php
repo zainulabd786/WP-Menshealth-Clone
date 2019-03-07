@@ -51,11 +51,11 @@ get_header(); ?>
           <!-- end top listed post items -->
         </div>
 
-	<div class="custom-video-wrapper py-4">
+	<!-- <div class="custom-video-wrapper py-4">
           <div class="custom-video-continer">
             <img class="img-fluid" src="image/lighthouse.jpg" alt="">
           </div>
-          <!-- end custom video continer -->
+          <!- end custom video continer --
           <div class="custom-video-content text-center px-md-4 py-4">
             <a class="custom-video-label mx-auto btn btn-primary" href="#">ENTERTAINMENT</a>
             <h2 class="custom-promo-title py-3 m-0"><a href="#">How Tom Hopper Stays in Superhero Shape</a></h2>
@@ -63,8 +63,8 @@ get_header(); ?>
                   Schrodt</a></span>
             </div>
           </div>
-          <!-- end custom video content -->
-    </div>
+          <!- end custom video content --
+    </div> -->
 
     <div class="post-full-width mt-4">
 

@@ -674,6 +674,10 @@ add_action( 'after_setup_theme', 'register_footer_bottom' );
 function register_footer_bottom() {
   register_nav_menu( 'footer-bottom', __( 'Footer Bottom', 'twentyseventeen' ) );
 }
+add_action( 'after_setup_theme', 'register_header_right' );
+function register_header_right() {
+  register_nav_menu( 'header-right', __( 'Header Right', 'twentyseventeen' ) );
+}
 
 
 function get_header_media_post_title() {
@@ -821,8 +825,8 @@ add_action( 'wp_head', 'wptutsplus_customize_colors' );
 
 
 
-
-/*function za_theme_activation(){
+/*
+function za_theme_activation(){
 	$theme_opts = get_option("za_opts");
 	if(!$theme_opts){
 		$opts = array(
@@ -847,31 +851,11 @@ function za_admin_menus(){
 add_action("admin_menu", "za_admin_menus");
 
 function za_theme_opts_page(){ ?>
-	<div class="wrap">
-		<div class="panel panel-success">
-			<div class="panel-heading">
-				<h3 class="panel-title"><?= _e('Theme Settings', 'twentyseventeen'); ?></h3>
-			</div>
-			<div class="panel-body">
-				<form method="post" action="admin-post.php">
-					<input type="hidden" name="za_save_options">
-					<?php wp_nonce_field('za_options_verify'); ?>
-
-				</form>
-			</div>
-		</div>
-		<div class="form-group">
-			<label>Pinned Video</label>
-			<input type="text" name="za_pinned_video_url">
+	<div class="wrap" style="display: flex; justify-content: center; align-items: center;">
+		<div>
+			<label>Pin Video URL</label>
+			<input type="text">
 		</div>
 	</div><?php
 }
-
-function za_scripts_admin(){
-	wp_enqueue_style("bootstrap-css", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
-}
-
-function za_admin_init(){
-	add_action("admin_enqueue_scripts", "za_scripts_admin");
-}
-add_action("za_admin_init", "za_admin_init");*/
+*/

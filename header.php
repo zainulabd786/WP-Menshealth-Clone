@@ -60,10 +60,13 @@
           </div>
           <!-- end navbar-collapse -->
           <div class="navbar-nav nav-swipeable flex-row ml-auto">
-            <a href="#" class="nav-link d-none d-sm-inline" href="#">Subscribe</a>
-            <a class="nav-link d-none d-md-inline" href="#">Newsletter</a>
-            <a class="nav-link nav-search-button d-none d-md-inline" href="#"><i class="fas fa-search"></i></a>
-            <a class="nav-link location-choice" href="#"><i class="fas fa-globe-americas"></i> <span class="">US</span></a>
+            <?php wp_nav_menu(
+              array(
+                'theme_location' => 'header-right',
+              )
+            ); ?>
+            <!-- <a class="nav-link nav-search-button d-none d-md-inline" href="#"><i class="fas fa-search"></i></a>
+            <a class="nav-link location-choice" href="#"><i class="fas fa-globe-americas"></i> <span class="">US</span></a> -->
           </div>
           <!-- end nav swipeable -->
         </div>
