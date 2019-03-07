@@ -63,10 +63,11 @@
             <?php wp_nav_menu(
               array(
                 'theme_location' => 'header-right',
+                'menu_class'     => 'navbar-nav'
               )
             ); ?>
-            <!-- <a class="nav-link nav-search-button d-none d-md-inline" href="#"><i class="fas fa-search"></i></a>
-            <a class="nav-link location-choice" href="#"><i class="fas fa-globe-americas"></i> <span class="">US</span></a> -->
+            <a class="nav-link nav-search-button d-none d-md-inline" href="#"><i class="fas fa-search"></i></a>
+            <!-- <a class="nav-link location-choice" href="#"><i class="fas fa-globe-americas"></i> <span class="">US</span></a> -->
           </div>
           <!-- end nav swipeable -->
         </div>
