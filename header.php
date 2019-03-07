@@ -45,7 +45,7 @@
       } ?>
       <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container px-0">
-          <a class="menu-toggler text-white mr-4"><i class="fas fa-bars fa-2x"></i></a>
+          <a class="menu-toggler mr-4"><i class="fas fa-bars fa-2x"></i></a>
           <a class="navbar-brand" href="#">
               <?php the_custom_logo(); ?>
           </a>
@@ -59,7 +59,7 @@
             ); ?>
           </div>
           <!-- end navbar-collapse -->
-          <div class="navbar-nav nav-swipeable flex-row ml-auto">
+          <div class="navbar-nav nav-swipeable flex-row align-items-center ml-auto">
             <?php wp_nav_menu(
               array(
                 'theme_location' => 'header-right',
