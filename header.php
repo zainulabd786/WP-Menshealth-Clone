@@ -83,7 +83,7 @@
         </div>
         <?php wp_nav_menu(
               array(
-                'theme_location' => 'top',
+                'theme_location' => 'side-menu',
                 'menu_id'        => 'top-menu',
                 'menu_class'     => 'nav flex-column'
               )

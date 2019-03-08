@@ -681,10 +681,11 @@ function register_header_right() {
 
 
 function get_header_media_post_title() {
+	$count = 1;
 	$args = array(
 		'post_type' => 'post',
         'post_status' => 'publish',
-        'posts_per_page'=>1,
+        'posts_per_page'=> 1,
         'order'=>'DESC',
         'orderby'=>'ID'
     );
@@ -695,16 +696,19 @@ function get_header_media_post_title() {
     if ( $the_query->have_posts() ) {
         $not_in_next_three = array();
         while ( $the_query->have_posts() ) {
-            $the_query->the_post(); ?>
-        	<div class="cover-story-details-wrapper d-flex justify-content-center">
-		        <div class="cover-story-details p-4 text-center">
-		          <span class="cover-story-label">
-		            <?= get_the_category()[0]->name; ?>
-		          </span>
-		            <h2 class="cover-story-hed text-white"><a class="cover-story-hed-container" href="#"><?= get_the_title() ?></a></h2>
-		        </div>
-		        <!-- end cover-story-details -->
-		    </div><?php
+            $the_query->the_post();
+            if($count == 1){ ?>
+	        	<div class="cover-story-details-wrapper d-flex justify-content-center">
+			        <div class="cover-story-details p-4 text-center">
+			          <span class="cover-story-label">
+			            <?= get_the_category()[0]->name; ?>
+			          </span>
+			            <h2 class="cover-story-hed text-white"><a class="cover-story-hed-container" href="<?= get_permalink() ?>"><?= get_the_title() ?></a></h2>
+			        </div>
+			        <!-- end cover-story-details -->
+			    </div><?php
+			}
+		    $count++;
         }
 
     }

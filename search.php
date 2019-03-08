@@ -33,7 +33,9 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				the_title();
+				?>
+					<a href="<?= get_permalink() ?>"><?= get_the_title() ?></a><br>
+				<?php
 				
 
 			endwhile; // End of the loop.
