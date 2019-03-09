@@ -44,17 +44,17 @@
         <!-- end cover story --> <?php 
       } ?>
       <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container px-0">
+        <div class="container justify-content-start justify-content-md-between px-0">
           <a class="menu-toggler mr-4"><i class="fas fa-bars fa-2x"></i></a>
-          <a class="navbar-brand" href="#">
+          <div class="d-none d-md-block">
               <?php the_custom_logo(); ?>
-          </a>
-          <div class="collapse navbar-collapse" id="">
+          </div>
+          <div class="custom-collapse" id="">
             <?php wp_nav_menu(
               array(
                 'theme_location' => 'top',
                 'menu_id'        => 'top-menu',
-                'menu_class'     => 'navbar-nav mr-auto'
+                'menu_class'     => 'navbar-nav flex-row mr-auto'
               )
             ); ?>
           </div>
@@ -63,10 +63,10 @@
             <?php wp_nav_menu(
               array(
                 'theme_location' => 'header-right',
-                'menu_class'     => 'navbar-nav'
+                'menu_class'     => 'navbar-nav d-none d-md-flex flex-row'
               )
             ); ?>
-            <a class="nav-link nav-search-button d-none d-md-inline" href="#"><i class="fas fa-search"></i></a>
+            <a class="nav-link nav-search-button d-inline" href="#"><i class="fas fa-search"></i></a>
             <!-- <a class="nav-link location-choice" href="#"><i class="fas fa-globe-americas"></i> <span class="">US</span></a> -->
           </div>
           <!-- end nav swipeable -->

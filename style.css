@@ -10675,6 +10675,23 @@ a.text-dark:focus {
   font-weight: 400;
 }
 
+.custom-video-continer {
+  position: relative;
+  display: block;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 56.25%;
+}
+
+.custom-video-continer video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .web-font {
   font-family: "Barlow Semi Condensed", sans-serif !important;
 }
@@ -11204,6 +11221,10 @@ th {
   overflow: hidden;
 }
 
+.cover-story-logo {
+  z-index: 1;
+}
+
 .cover-story-wrapper #wp-custom-header-video {
   display: block;
   width: 100%;
@@ -11217,16 +11238,47 @@ th {
 
 .cover-story-wrapper .cover-story-details-wrapper {
   position: absolute;
-  bottom: 25px;
+  bottom: 0;
   left: 0;
   right: 0;
   z-index: 9;
 }
 
 .cover-story-wrapper .cover-story-details-wrapper .cover-story-details {
-  background: #000;
   color: var(--white);
 }
+
+@media (min-width: 768px) {
+  .cover-story-wrapper .cover-story-details-wrapper {
+    bottom: 25px;
+  }
+
+  .cover-story-wrapper .cover-story-details-wrapper .cover-story-details {
+    background: #000;
+  }
+}
+
+@media (max-width: 767px) {
+  .cover-story-wrapper .cover-story-details-wrapper .cover-story-details {
+    text-align: left !important;
+    width: 100%;
+    background: linear-gradient(to top,rgba(0,0,0,.7),rgba(133,11,11,0));
+    text-align: left;
+    opacity: 1;
+  }
+  .cover-story-wrapper .cover-story-details-wrapper .cover-story-details h2{
+    text-align: left !important;
+    font-size: 1.5625rem;
+    line-height: 1.2;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .cover-story-wrapper .cover-story-details-wrapper .cover-story-details h2 a{
+    color: #fff !important;
+  }
+
+}
+
 
 .cover-story-wrapper .cover-story-details-wrapper .cover-story-details .cover-story-label {
   font-family: "Barlow Semi Condensed", sans-serif;
@@ -11274,6 +11326,10 @@ th {
 
 .cover-story-wrapper .cover-story-details-wrapper .cover-story-details .cover-story-hed .cover-story-hed-container:hover {
   color: var(--primary);
+}
+
+.menu-main-menu-container .navbar-nav > li:nth-child(n+4){
+  display: none;
 }
 
 .footer-container {
