@@ -829,12 +829,15 @@ add_action( 'wp_head', 'wptutsplus_customize_colors' );
 
 
 
-/*
+
 function za_theme_activation(){
 	$theme_opts = get_option("za_opts");
 	if(!$theme_opts){
 		$opts = array(
-			"pin_video" => ''
+			"pin_video" => '',
+			"category" => '',
+			"link" => "",
+			"title" => ""
 		);
 		add_option('za_opts', $opts);
 	}
@@ -845,8 +848,8 @@ add_action("after_switch_theme", "za_theme_activation");
 
 function za_admin_menus(){
 	add_menu_page(
-		"Theme Options",
-		"Theme Options",
+		"Pinned Video",
+		"Pinned Video",
 		"manage_options",
 		"za_theme_opts",
 		"za_theme_opts_page"
@@ -854,12 +857,74 @@ function za_admin_menus(){
 }
 add_action("admin_menu", "za_admin_menus");
 
-function za_theme_opts_page(){ ?>
+function za_theme_opts_page(){ 
+	$opts = get_option("za_opts");	?>
+	<?php
+			if(isset($_GET['status']) && $_GET['status'] == 1){ ?>
+				<div style="padding: 10px;" class="notice notice-success is-dismissible">Success!</div><?php
+			}
+		?>
 	<div class="wrap" style="display: flex; justify-content: center; align-items: center;">
-		<div>
-			<label>Pin Video URL</label>
-			<input type="text">
-		</div>
+		
+		<form method="post" action="admin-post.php">
+			<input type="hidden" name="action" value="za_pinned_video">
+			<?php wp_nonce_field("za_pin_video_verfy"); ?>
+			<table>
+				<tr>
+					<td><label>Pin Video URL</label></td>
+					<td><input type="text" name="za_pin_video" value="<?= $opts['pin_video'] ?>"></td>
+				</tr>
+				<tr>
+					<td><label>Category</label></td>
+					<td>
+						<select name="za_pin_category">
+							<option>Select Category</option>
+							<?php
+								foreach (get_categories() as $category) { ?>
+									<option <?= ($opts['category'] === $category->name ) ? "selected" : "" ?> value="<?= $category->name ?>"><?= $category->name ?></option><?php
+								}
+							?>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Link</label>
+					</td>
+					<td><input type="text" name="za_pin_video_link" value="<?= $opts['link'] ?>"></td>
+				</tr>
+				<tr>
+					<td>
+						<label>Title</label>
+					</td>
+					<td><input type="text" name="za_pin_video_title" value="<?= $opts['title'] ?>"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" name="submit" value="Submit"></td>
+				</tr>
+			</table>
+		</form>
 	</div><?php
 }
-*/
+
+add_action("admin_init", "za_admin_init");
+function za_admin_init(){
+	add_action("admin_post_za_pinned_video", "za_pinned_video");
+}
+
+
+function za_pinned_video(){
+	if(!current_user_can('edit_theme_options')) wp_die('You are not allowed to be on this page');
+	check_admin_referer("za_pin_video_verfy");
+
+	$opts = get_option("za_opts");
+
+	$opts['pin_video'] = $_POST['za_pin_video'];
+	$opts['category'] = sanitize_text_field($_POST['za_pin_category']);
+	$opts['link'] = $_POST['za_pin_video_link'];
+	$opts['title'] = sanitize_text_field($_POST['za_pin_video_title']);
+
+	update_option("za_opts", $opts);
+
+	wp_redirect(admin_url('admin.php?page=za_theme_opts&status=1'));
+}

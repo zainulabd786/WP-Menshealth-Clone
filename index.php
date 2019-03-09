@@ -51,20 +51,25 @@ get_header(); ?>
           <!-- end top listed post items -->
         </div>
 
-	<!-- <div class="custom-video-wrapper py-4">
+	<div class="custom-video-wrapper py-4">
+		<?php 
+			$opts = get_option("za_opts");
+			$url = $opts['pin_video'];
+		?>
           <div class="custom-video-continer">
-            <img class="img-fluid" src="image/lighthouse.jpg" alt="">
+            <!-- <img class="img-fluid" src="image/lighthouse.jpg" alt=""> -->
+            <?php echo do_shortcode('[video src="'.$url.'"]'); ?>
           </div>
-          <!- end custom video continer --
+          <!-- end custom video continer -->
           <div class="custom-video-content text-center px-md-4 py-4">
-            <a class="custom-video-label mx-auto btn btn-primary" href="#">ENTERTAINMENT</a>
-            <h2 class="custom-promo-title py-3 m-0"><a href="#">How Tom Hopper Stays in Superhero Shape</a></h2>
-            <div class="byline byline-listing"><span class="byline-author">By <a class="byline-name" href="#">Paul
+            <a class="custom-video-label mx-auto btn btn-primary" href="<?= $opts['link'] ?>"><?= $opts['category'] ?></a>
+            <h2 class="custom-promo-title py-3 m-0"><a href="<?= $opts['link'] ?>"><?= $opts['title'] ?></a></h2>
+            <!-- <div class="byline byline-listing"><span class="byline-author">By <a class="byline-name" href="#">Paul
                   Schrodt</a></span>
-            </div>
+            </div> -->
           </div>
-          <!- end custom video content --
-    </div> -->
+          <!-- end custom video content -->
+    </div>
 
     <div class="post-full-width mt-4">
 
