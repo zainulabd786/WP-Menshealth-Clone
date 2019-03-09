@@ -54,11 +54,11 @@ get_header(); ?>
 	<div class="custom-video-wrapper py-4">
 		<?php 
 			$opts = get_option("za_opts");
-			$url = $opts['pin_video'];
+			$id = $opts['pin_video'];
 		?>
           <div class="custom-video-continer">
             <!-- <img class="img-fluid" src="image/lighthouse.jpg" alt=""> -->
-            <?php echo do_shortcode('[video src="'.$url.'"]'); ?>
+            <?php echo do_shortcode('[responsive-video identifier="'.$id.'"]'); ?>
           </div>
           <!-- end custom video continer -->
           <div class="custom-video-content text-center px-md-4 py-4">

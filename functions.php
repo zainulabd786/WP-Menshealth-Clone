@@ -928,3 +928,14 @@ function za_pinned_video(){
 
 	wp_redirect(admin_url('admin.php?page=za_theme_opts&status=1'));
 }
+
+
+// register the shortcode to wrap html around the content
+function wptuts_responsive_video_shortcode( $atts ) {
+    extract( shortcode_atts( array (
+        'identifier' => ''
+    ), $atts ) );
+    return '<div class="wptuts-video-container"><iframe src="//www.youtube.com/embed/' . $identifier . '?modestbranding=1&rel=0" height="240" width="320" allowfullscreen="" frameborder="0"></iframe></div>
+    <!--.wptuts-video-container-->';
+}
+add_shortcode ('responsive-video', 'wptuts_responsive_video_shortcode' );
