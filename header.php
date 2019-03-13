@@ -16,7 +16,7 @@
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
@@ -45,7 +45,7 @@
       } ?>
       <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container justify-content-start justify-content-md-between px-0">
-          <a class="menu-toggler mr-4"><i class="fas fa-bars fa-2x"></i></a>
+          <a class="menu-toggler mr-2 mr-md-4"><i class="fas fa-bars fa-2x"></i></a>
           <div class="d-none d-md-block">
               <?php the_custom_logo(); ?>
           </div>
@@ -54,7 +54,7 @@
               array(
                 'theme_location' => 'top',
                 'menu_id'        => 'top-menu',
-                'menu_class'     => 'navbar-nav flex-row mr-auto'
+                'menu_class'     => 'header-left navbar-nav flex-row mr-auto'
               )
             ); ?>
           </div>
