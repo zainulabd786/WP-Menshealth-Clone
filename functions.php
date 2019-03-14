@@ -16,6 +16,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 	return;
 }
+include_once get_template_directory() . '/admin-folder/admin/admin-init.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -939,3 +940,4 @@ function wptuts_responsive_video_shortcode( $atts ) {
     <!--.wptuts-video-container-->';
 }
 add_shortcode ('responsive-video', 'wptuts_responsive_video_shortcode' );
+
