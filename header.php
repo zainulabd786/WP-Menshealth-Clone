@@ -75,8 +75,8 @@
       </nav>
       <!-- end navbar -->
       <nav id="sidebar-menu" class="sidebar-menu">
-        <div class="close-menu text-right mb-2">
-          <a href="#" class="d-inline-block p-0"><i class="fas fa-times fa-2x"></i></a>
+        <div class="close-menu text-right">
+          <a href="#" class="close-menu-icon d-inline-block p-0"></a>
         </div>
         <div class="menu-search">
           <a href="#" class="nav-search-button"><i class="fas fa-search"></i> search </a>

@@ -11579,7 +11579,6 @@ th {
 }
 
 .sidebar-menu .menu-search {
-  padding: 0.625rem 0;
   margin-bottom: 0.625rem;
 }
 
@@ -11597,6 +11596,14 @@ th {
 
 .menu-open .fixed-menu {
   left: 300px !important;
+}
+
+.close-menu-icon {
+  height: 35px !important;
+  width: 35px !important;
+  display: inline-block !important;
+  background: url(menshealth-html/image/cross-remove-sign.png) no-repeat center;
+  background-size: 20px;
 }
 
 /* Sub menu Styling */
@@ -11628,7 +11635,6 @@ th {
   float: left;
   width: 100%;
   display: none;
-  background: #ff572a;
 }
 
 .sidebar-menu .menu-main-menu-container ul ul li a {
