@@ -72,7 +72,7 @@
     );
 
     // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
-    $args['share_icons'][] = array(
+    /*$args['share_icons'][] = array(
         'url'   => 'https://github.com/ReduxFramework/ReduxFramework',
         'title' => 'Visit us on GitHub',
         'icon'  => 'el el-github'
@@ -92,7 +92,7 @@
         'url'   => 'http://www.linkedin.com/company/redux-framework',
         'title' => 'Find us on LinkedIn',
         'icon'  => 'el el-linkedin'
-    );
+    );*/
 
     Redux::setArgs( $opt_name, $args );
 
@@ -116,11 +116,11 @@
             'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'admin_folder' )
         )
     );
-    Redux::setHelpTab( $opt_name, $tabs );
+    //edux::setHelpTab( $opt_name, $tabs );
 
     // Set the help sidebar
     $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'admin_folder' );
-    Redux::setHelpSidebar( $opt_name, $content );
+    //Redux::setHelpSidebar( $opt_name, $content );
 
 
     /*
@@ -135,22 +135,41 @@
      */
 
     Redux::setSection( $opt_name, array(
-        'title'  => __( 'Basic Field', 'redux-framework-demo' ),
-        'id'     => 'basic',
-        'desc'   => __( 'Basic field with no subsections.', 'redux-framework-demo' ),
+        'title'  => __( 'Pin Media', 'redux-framework-demo' ),
+        'id'     => 'Pin Media',
+        'desc'   => __( 'Set Pin Media For Home Page', 'redux-framework-demo' ),
         'icon'   => 'el el-home',
         'fields' => array(
             array(
-                'id'       => 'opt-text',
+                'id'       => 'pin-media',
+                'type'     => 'media',
+                'mode'     => false,
+                'url'      => true,
+                'preview'  => true,
+                'title'    => __( 'Select Media', 'redux-framework-demo' )
+            ),
+            array(
+                'id'       => 'pin-media-title',
                 'type'     => 'text',
-                'title'    => __( 'Example Text', 'redux-framework-demo' ),
-                'desc'     => __( 'Example description.', 'redux-framework-demo' ),
-                'subtitle' => __( 'Example subtitle.', 'redux-framework-demo' ),
+                'title'    => __( 'Pin Meida Title', 'redux-framework-demo' ),
+            ),
+            array(
+                'id'       => 'pin-media-category',
+                'type'     => 'select',
+                'data'     => 'categories',
+                'title'    => __( 'Pin Media Title', 'redux-framework-demo' ),
+            ),
+            array(
+                'id'       => 'pin-media-link',
+                'type'     => 'select',
+                'data'     => 'categories',
+                'title'    => __( 'Pin Media Title', 'redux-framework-demo' ),
             )
-        )
+        ),
+            
     ) );
 
-    Redux::setSection( $opt_name, array(
+   /* Redux::setSection( $opt_name, array(
         'title' => __( 'Basic Fields', 'redux-framework-demo' ),
         'id'    => 'basic',
         'desc'  => __( 'Basic fields as subsections.', 'redux-framework-demo' ),
@@ -189,7 +208,7 @@
                 'default'  => 'Default Text',
             ),
         )
-    ) );
+    ) );*/
 
     /*
      * <--- END SECTIONS

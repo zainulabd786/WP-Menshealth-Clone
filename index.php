@@ -52,18 +52,23 @@ get_header(); ?>
         </div>
 
 	<div class="custom-video-wrapper py-4">
-		<?php 
-			$opts = get_option("za_opts");
-			$id = $opts['pin_video'];
-		?>
+			
+			<?php global $za_theme_opts; ?>
+		
           <div class="custom-video-continer">
             <!-- <img class="img-fluid" src="image/lighthouse.jpg" alt=""> -->
-            <?php echo do_shortcode('[responsive-video identifier="'.$id.'"]'); ?>
+            <?php
+            	if(wp_attachment_is_image($za_theme_opts['pin-media']['id'])){ ?>
+            		<img class="img-fluid" src="$za_theme_opts['pin-media']['url']" alt=""><?php
+            	}else{
+            		echo do_shortcode('[video src="'.$za_theme_opts['pin-media']['url'].'" controls]');
+            	}
+            ?>
           </div>
           <!-- end custom video continer -->
           <div class="custom-video-content text-center px-md-4 py-4">
-            <a class="custom-video-label mx-auto btn btn-primary" href="<?= $opts['link'] ?>"><?= $opts['category'] ?></a>
-            <h2 class="custom-promo-title py-3 m-0"><a href="<?= $opts['link'] ?>"><?= $opts['title'] ?></a></h2>
+            <a class="custom-video-label mx-auto btn btn-primary" href="<?= $za_theme_opts['pin-media-link'] ?>"><?= get_cat_name($za_theme_opts['pin-media-category']) ?></a>
+            <h2 class="custom-promo-title py-3 m-0"><a href="<?= $za_theme_opts['pin-media-link'] ?>"><?= $za_theme_opts['pin-media-title'] ?></a></h2>
             <!-- <div class="byline byline-listing"><span class="byline-author">By <a class="byline-name" href="#">Paul
                   Schrodt</a></span>
             </div> -->

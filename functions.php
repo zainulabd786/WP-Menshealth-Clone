@@ -831,7 +831,7 @@ add_action( 'wp_head', 'wptutsplus_customize_colors' );
 
 
 
-function za_theme_activation(){
+/*function za_theme_activation(){
 	$theme_opts = get_option("za_opts");
 	if(!$theme_opts){
 		$opts = array(
@@ -844,10 +844,10 @@ function za_theme_activation(){
 	}
 
 }
-add_action("after_switch_theme", "za_theme_activation");
+add_action("after_switch_theme", "za_theme_activation");*/
 
 
-function za_admin_menus(){
+/*function za_admin_menus(){
 	add_menu_page(
 		"Pinned Video",
 		"Pinned Video",
@@ -911,10 +911,10 @@ function za_theme_opts_page(){
 add_action("admin_init", "za_admin_init");
 function za_admin_init(){
 	add_action("admin_post_za_pinned_video", "za_pinned_video");
-}
+}*/
 
 
-function za_pinned_video(){
+/*function za_pinned_video(){
 	if(!current_user_can('edit_theme_options')) wp_die('You are not allowed to be on this page');
 	check_admin_referer("za_pin_video_verfy");
 
@@ -928,16 +928,16 @@ function za_pinned_video(){
 	update_option("za_opts", $opts);
 
 	wp_redirect(admin_url('admin.php?page=za_theme_opts&status=1'));
-}
+}*/
 
 
 // register the shortcode to wrap html around the content
-function wptuts_responsive_video_shortcode( $atts ) {
+/*function wptuts_responsive_video_shortcode( $atts ) {
     extract( shortcode_atts( array (
         'identifier' => ''
     ), $atts ) );
     return '<div class="wptuts-video-container"><iframe src="//www.youtube.com/embed/' . $identifier . '?modestbranding=1&rel=0" height="240" width="320" allowfullscreen="" frameborder="0"></iframe></div>
     <!--.wptuts-video-container-->';
 }
-add_shortcode ('responsive-video', 'wptuts_responsive_video_shortcode' );
+add_shortcode ('responsive-video', 'wptuts_responsive_video_shortcode' );*/
 
