@@ -11764,3 +11764,31 @@ video.wp-video-shortcode {
   height: auto !important;
 }
 /*Video 100% height and width*/
+
+
+/*Floating Video*/
+
+#featured-video {
+  transition: width .2s ease-in-out, height .2s ease-in-out, transform .38s ease-in-out;
+}
+/** Use .sticky */
+#featured-video.is-sticky {
+  position: fixed;
+  top: 15px;
+  left: auto;
+  max-width: 280px;
+  max-height: 158px;
+  width: 280px;
+  height: 158px;
+}
+@media screen and (min-width: 1120px) {
+   #featured-video.is-sticky {
+      transform: translateX(-80%);
+   }
+}
+@media screen and (min-width: 1300px) {
+   #featured-video.is-sticky {
+      transform: translateX(-115%);
+   }
+}
+/*Floating Video*/

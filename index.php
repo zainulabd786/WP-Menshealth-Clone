@@ -55,7 +55,7 @@ get_header(); ?>
 			
 			<?php global $za_theme_opts; ?>
 		
-          <div class="custom-video-continer">
+          <div class="custom-video-continer" id="featured-video">
             <!-- <img class="img-fluid" src="image/lighthouse.jpg" alt=""> -->
             <?php
             	if(wp_attachment_is_image($za_theme_opts['pin-media']['id'])){ ?>

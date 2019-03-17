@@ -1,4 +1,29 @@
 jQuery(document).ready(function ($) {
+  
+
+  /*Floating Video*/
+    var $window = $( window ); // 1. Window Object.
+    var $featuredMedia = $( "#featured-video" ); // 1. The Video Container.
+    var $featuredVideo = $( "#featured-video video" ); // 2. The Youtube Video.
+     
+    var player; // 3. Youtube player object.
+    var top = $featuredMedia.offset().top; // 4. The video position from the top of the document;
+    var offset = Math.floor( top + ( $featuredMedia.outerHeight() / 2 ) ); //5. offset.
+  /*Floating Video*/
+
+  $window
+  .on( "resize", function() {
+     top = $featuredMedia.offset().top;
+     offset = Math.floor( top + ( $featuredMedia.outerHeight() / 2 ) );
+  } )
+   
+  .on( "scroll", function() {
+    console.log("scroll")
+     $featuredMedia.toggleClass( "is-sticky",
+       $window.scrollTop() > offset && $featuredMedia.find(".mejs-playpause-button").hasClass( "mejs-pause" )
+     );
+  } );
+
   // serch open
   $('.nav-search-button').click(function (e) {
     e.preventDefault();
