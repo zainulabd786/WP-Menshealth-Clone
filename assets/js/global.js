@@ -208,7 +208,7 @@
 
 		adjustHeaderHeight();
 		setQuotesIcon();
-		belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
+		//belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
 		if ( true === supportsInlineSVG() ) {
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
 		}
@@ -237,7 +237,7 @@
 	$( window ).resize( function() {
 		clearTimeout( resizeTimer );
 		resizeTimer = setTimeout( function() {
-			belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
+			//belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
 		}, 300 );
 		setTimeout( adjustHeaderHeight, 1000 );
 	});
