@@ -10944,6 +10944,7 @@ th {
     flex: 0 0 45%;
     max-width: 45%;
     margin: 0 !important;
+    height: 300px;
   }
 
   .card.card-more-items {
@@ -11002,6 +11003,8 @@ th {
   transition: transform 0.25s cubic-bezier(0.78, 0, 0.185, 1), -webkit-transform 0.25s cubic-bezier(0.78, 0, 0.185, 1);
   transition-timing-function: cubic-bezier(0.78, 0, 0.185, 1);
   -webkit-backface-visibility: hidden;
+  width: 500px;
+  height: auto;
 }
 
 .card .card-image-container:hover {
@@ -11248,7 +11251,7 @@ th {
 }
 
 .cover-story-wrapper {
-  height: calc(100vh - 100px);
+  /*height: calc(100vh - 100px);*/
   overflow: hidden;
 }
 
@@ -11774,12 +11777,13 @@ video.wp-video-shortcode {
 /** Use .sticky */
 #featured-video.is-sticky {
   position: fixed;
-  top: 15px;
-  left: auto;
+  bottom: 20%;
+  right: -20%;
   max-width: 280px;
   max-height: 158px;
-  width: 280px;
-  height: 158px;
+  width: 560px;
+  height: 316px;
+  z-index: 999;
 }
 @media screen and (min-width: 1120px) {
    #featured-video.is-sticky {

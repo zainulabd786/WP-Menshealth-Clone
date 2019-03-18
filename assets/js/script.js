@@ -1,6 +1,5 @@
 jQuery(document).ready(function ($) {
   
-
   /*Floating Video*/
     var $window = $( window ); // 1. Window Object.
     var $featuredMedia = $( "#featured-video" ); // 1. The Video Container.
