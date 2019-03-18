@@ -10944,7 +10944,6 @@ th {
     flex: 0 0 45%;
     max-width: 45%;
     margin: 0 !important;
-    height: 300px;
   }
 
   .card.card-more-items {
@@ -11796,3 +11795,11 @@ video.wp-video-shortcode {
    }
 }
 /*Floating Video*/
+/* Add Styling */
+.addsen-container {
+    background-color: rgba(226,226,226,.4);
+    padding: .9375rem 0;
+    margin-bottom: 1.25rem;
+    min-height: 7.5625rem;
+    text-align: center;
+}
