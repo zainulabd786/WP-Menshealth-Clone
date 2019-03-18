@@ -151,19 +151,18 @@
             array(
                 'id'       => 'pin-media-title',
                 'type'     => 'text',
-                'title'    => __( 'Pin Meida Title', 'redux-framework-demo' ),
+                'title'    => __( 'Pin Media Title', 'redux-framework-demo' ),
             ),
             array(
                 'id'       => 'pin-media-category',
                 'type'     => 'select',
                 'data'     => 'categories',
-                'title'    => __( 'Pin Media Title', 'redux-framework-demo' ),
+                'title'    => __( 'Category', 'redux-framework-demo' ),
             ),
             array(
                 'id'       => 'pin-media-link',
-                'type'     => 'select',
-                'data'     => 'categories',
-                'title'    => __( 'Pin Media Title', 'redux-framework-demo' ),
+                'type'     => 'text',
+                'title'    => __( 'Pin Media Link', 'redux-framework-demo' ),
             )
         ),
             
