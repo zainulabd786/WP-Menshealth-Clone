@@ -95,7 +95,7 @@ get_header(); ?>
 			            $cat_link = get_category_link($category->cat_ID) ?>
 
 			            <div id="post-<?php the_ID(); ?>" class="card">
-				            <a href="#" class="card-image-container"><?php the_post_thumbnail( 'large' ); ?></a>
+				            <a href="#" class="card-image-container"><?php the_post_thumbnail( array("500", "300") ); ?></a>
 				            <div class="card-body">
 				              <div class="post-meta-item-wrapper">
 				                <div class="post-meta-item">
@@ -142,7 +142,7 @@ get_header(); ?>
 					                <div class="collection-breaker-item">
 					                  <div class="collection-breaker-image">
 					                    <a href="#" class="d-block">
-					                      <?php the_post_thumbnail('large'); ?>
+					                      <?php the_post_thumbnail( array("500", "300") ); ?>
 					                    </a>
 					                  </div>
 					                  <!-- end collection-breaker-image -->
@@ -185,7 +185,7 @@ get_header(); ?>
 			            $cat_link = get_category_link($category->cat_ID) ?>
 
 			            <div id="post-<?php the_ID(); ?>" class="card">
-				            <a href="#" class="card-image-container"><?php the_post_thumbnail( 'large' ); ?></a>
+				            <a href="#" class="card-image-container"><?php the_post_thumbnail( array("500", "300") ); ?></a>
 				            <div class="card-body">
 				              <div class="post-meta-item-wrapper">
 				                <div class="post-meta-item">
