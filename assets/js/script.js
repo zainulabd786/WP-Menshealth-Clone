@@ -17,11 +17,12 @@ jQuery(document).ready(function ($) {
   } )
    
   .on( "scroll", function() {
-    console.log("scroll")
      $featuredMedia.toggleClass( "is-sticky",
        $window.scrollTop() > offset && $featuredMedia.find(".mejs-playpause-button").hasClass( "mejs-pause" )
      );
   } );
+
+  $("#wp-custom-header img").length == 0 && $(".cover-story-wrapper").addClass("cover-100-vh")
 
   // serch open
   $('.nav-search-button').click(function (e) {

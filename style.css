@@ -11249,8 +11249,12 @@ th {
   transition: all .3s ease-in-out;
 }
 
-.cover-story-wrapper {
-  /*height: calc(100vh - 100px);*/
+/*.cover-story-wrapper {
+  height: calc(100vh - 100px);
+  overflow: hidden;
+}*/
+.cover-100-vh{
+  height: calc(100vh - 100px);
   overflow: hidden;
 }
 
