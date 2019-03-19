@@ -11803,3 +11803,17 @@ video.wp-video-shortcode {
     min-height: 7.5625rem;
     text-align: center;
 }
+
+
+.ss-powered-by{
+  display: none !important;
+}
+
+.ss-social-icons-container li a{
+  width: 52px!important;
+  -webkit-transition: width 0.5s!important; /* Safari */
+  transition: width 0.5s!important;
+}
+.ss-social-icons-container li a:hover{
+  width: 70px!important;
+}
