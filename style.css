@@ -11821,3 +11821,13 @@ video.wp-video-shortcode {
 .ss-social-icons-container li a:hover{
   width: 70px!important;
 }
+
+.card-image-container{
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+}
+.card-image-container img{
+  width: 100%;
+  height: auto;
+}
