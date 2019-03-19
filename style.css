@@ -11780,24 +11780,23 @@ video.wp-video-shortcode {
 /** Use .sticky */
 #featured-video.is-sticky {
   position: fixed;
-  bottom: 20%;
-  right: -20%;
-  max-width: 280px;
-  max-height: 158px;
-  width: 560px;
-  height: 316px;
+  bottom: 0;
+  right: -500px;
+  max-width: 500px;
+  width: 500px;
   z-index: 999;
+  transform: translateX(-100%);
 }
-@media screen and (min-width: 1120px) {
+/*@media screen and (min-width: 1120px) {
    #featured-video.is-sticky {
       transform: translateX(-80%);
    }
-}
-@media screen and (min-width: 1300px) {
+}*/
+/*@media screen and (min-width: 1300px) {
    #featured-video.is-sticky {
       transform: translateX(-115%);
    }
-}
+}*/
 /*Floating Video*/
 /* Add Styling */
 .addsen-container {
