@@ -1,5 +1,8 @@
 jQuery(document).ready(function ($) {
-  
+  console.log(za_theme_opts)
+  if(za_theme_opts['show-header-post'] == "0"){ /*makes logo bigger if header post is disabled*/
+    $(".cover-story-logo .custom-logo").css("maxHeight", "150px")
+  }
   /*Floating Video*/
     var $window = $( window ); // 1. Window Object.
     var $featuredMedia = $( "#featured-video" ); // 1. The Video Container.
@@ -8,7 +11,6 @@ jQuery(document).ready(function ($) {
     var player; // 3. Youtube player object.
     var top = $featuredMedia.offset().top; // 4. The video position from the top of the document;
     var offset = Math.floor( top + ( $featuredMedia.outerHeight() / 2 ) ); //5. offset.
-  /*Floating Video*/
 
   $window
   .on( "resize", function() {
@@ -21,6 +23,7 @@ jQuery(document).ready(function ($) {
        $window.scrollTop() > offset && $featuredMedia.find(".mejs-playpause-button").hasClass( "mejs-pause" )
      );
   } );
+  /*Floating Video*/
 
   $("#wp-custom-header img").length == 0 && $(".cover-story-wrapper").addClass("cover-100-vh")
 

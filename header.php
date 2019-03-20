@@ -20,6 +20,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
+<?php global $za_theme_opts; ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -28,7 +29,7 @@
 
 	<header id="header-container" class="header-container-wrapper"><?php
       if (is_front_page()) { ?>
-        <div class="cover-story-wrapper position-relative">
+        <div class="cover-story-wrapper position-relative <?= ($za_theme_opts['show-header-post'] != '1') ? 'd-flex justify-content-center align-items-center' : '' ?>">
           <div class="cover-story-logo position-absolute pt-4 pl-4">
             <a href="#" class="cover-story-logo-link">
               <?php the_custom_logo(); ?>
@@ -38,7 +39,9 @@
             <?php the_custom_header_markup(); ?>
           </div>
           <!-- End cover story video -->
-          <?php do_action("get_header_media_post_title"); ?>
+          <?php
+            if($za_theme_opts['show-header-post'] == '1') do_action("get_header_media_post_title"); 
+          ?>
         <!-- end cover-story-details wrapper -->
         </div>
         <!-- end cover story --> <?php 

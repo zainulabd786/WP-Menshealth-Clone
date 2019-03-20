@@ -431,6 +431,7 @@ function twentyseventeen_colors_css_wrap() {
  * Enqueues scripts and styles.
  */
 function twentyseventeen_scripts() {
+	global $za_theme_opts;
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'twentyseventeen-fonts', twentyseventeen_fonts_url(), array(), null );
 
@@ -446,6 +447,7 @@ function twentyseventeen_scripts() {
 	//custom js
 	wp_enqueue_script( 'jQuery', get_theme_file_uri( '/assets/js/plugins/jquery.min.js' ), array() );
 	wp_enqueue_script( 'custom-js', get_theme_file_uri( '/assets/js/script.js' ), array("jQuery") );
+	wp_localize_script( 'custom-js', 'za_theme_opts', $za_theme_opts );
 
 	// Load the dark colorscheme.
 	if ( 'dark' === get_theme_mod( 'colorscheme', 'light' ) || is_customize_preview() ) {

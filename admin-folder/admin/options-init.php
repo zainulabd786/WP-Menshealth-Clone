@@ -135,8 +135,8 @@
      */
 
     Redux::setSection( $opt_name, array(
-        'title'  => __( 'Pin Media', 'redux-framework-demo' ),
-        'id'     => 'Pin Media',
+        'title'  => __( 'Basic Options', 'redux-framework-demo' ),
+        'id'     => 'basic-options',
         'desc'   => __( 'Set Pin Media For Home Page', 'redux-framework-demo' ),
         'icon'   => 'el el-home',
         'fields' => array(
@@ -163,6 +163,12 @@
                 'id'       => 'pin-media-link',
                 'type'     => 'text',
                 'title'    => __( 'Pin Media Link', 'redux-framework-demo' ),
+            ),
+            array(
+                'id'       => 'show-header-post',
+                'type'     => 'checkbox',
+                'title'    => __( 'Show header post', 'redux-framework-demo' ),
+                'default'  => '1'
             )
         ),
             
