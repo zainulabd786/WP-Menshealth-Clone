@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-  console.log(za_theme_opts)
+  
   if(za_theme_opts['show-header-post'] == "0"){ /*makes logo bigger if header post is disabled*/
     $(".cover-story-logo .custom-logo").css("maxHeight", "150px")
   }

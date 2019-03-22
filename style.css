@@ -11613,22 +11613,22 @@ th {
 }
 
 /* Sub menu Styling */
-.menu-main-menu-container ul {
+.sidebar-menu ul {
   margin: 0px;
   padding: 0px;
   list-style: none;
 }
 
-.sidebar-menu .menu-main-menu-container ul:before,
-.sidebar-menu .menu-main-menu-container ul:after,
-.sidebar-menu .menu-main-menu-container ul li:before,
-.sidebar-menu .menu-main-menu-container ul li:after {
+.sidebar-menu ul:before,
+.sidebar-menu ul:after,
+.sidebar-menu ul li:before,
+.sidebar-menu ul li:after {
   display: block;
   content: "";
   clear: both;
 }
 
-.sidebar-menu .menu-main-menu-container ul li {
+.sidebar-menu ul li {
   float: left;
   width: 100%;
 }
@@ -11637,13 +11637,13 @@ th {
   float: left;
 }
 
-.sidebar-menu .menu-main-menu-container ul ul {
+.sidebar-menu ul ul {
   float: left;
   width: 100%;
   display: none;
 }
 
-.sidebar-menu .menu-main-menu-container ul ul li a {
+.sidebar-menu ul ul li a {
   font-size: 16px;
   padding-left: 10px;
   text-transform: none;
@@ -11829,4 +11829,28 @@ video.wp-video-shortcode {
 .card-image-container img{
   width: 100%;
   height: auto;
+}
+.big-logo-position{
+  /*top: 25%;*/
+  left: 25%;
+}
+@media (max-width: 768px) {
+  .big-logo-position{
+    left: 0;
+  }
+  .card-image-container{
+    width: auto;
+    height: auto;
+  }
+  .mobile-height{
+    height: 100vh;
+  }
+  .mobile-head .wp-custom-header img{
+    width: 100%;
+    max-height: 559px;
+  }
+  .container{
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
