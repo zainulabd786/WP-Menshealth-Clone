@@ -22,15 +22,14 @@
 <?php wp_head(); ?>
 <?php global $za_theme_opts; ?>
 </head>
-
 <body <?php body_class(); ?>>
 <div id="main-page-wrapper" class="page-wrapper">
 
 
 	<header id="header-container" class="header-container-wrapper"><?php
       if (is_front_page()) { ?>
-        <div class="cover-story-wrapper position-relative <?= ($za_theme_opts['show-header-post'] != '1') ? 'd-flex justify-content-center align-items-center' : '' ?>">
-          <div class="cover-story-logo position-absolute pt-4 pl-4">
+        <div class="cover-story-wrapper position-relative mobile-head">
+          <div class="cover-story-logo position-absolute pt-4 pl-4 <?= ($za_theme_opts['show-header-post'] != '1') ? 'big-logo-position' : '' ?>">
             <a href="#" class="cover-story-logo-link">
               <?php the_custom_logo(); ?>
             </a>
