@@ -702,7 +702,7 @@ function get_header_media_post_title() {
             $the_query->the_post();
             if($count == 1){ ?>
 	        	<div class="cover-story-details-wrapper d-flex justify-content-center">
-			        <div class="cover-story-details p-4 text-center">
+			        <div class="cover-story-details head-post-padding text-center">
 			          <span class="cover-story-label">
 			            <?= get_the_category()[0]->name; ?>
 			          </span>

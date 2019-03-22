@@ -11834,6 +11834,10 @@ video.wp-video-shortcode {
   /*top: 25%;*/
   left: 25%;
 }
+
+.head-post-padding{
+  padding: .9375rem 1.25rem 1.25rem;
+}
 @media (max-width: 768px) {
   .big-logo-position{
     left: 0;

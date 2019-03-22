@@ -52,7 +52,7 @@ get_header(); ?>
 				</div>
 			</div>				
 <div class="addsen-container">
-
+	<?php echo wp_get_attachment_image(137, 'original') ?>
 </div>
 <!-- end add container -->
 <div class="container">
