@@ -177,12 +177,6 @@
                 'default'  => '1'
             ),
             array(
-                'id'       => 'show-custom-add',
-                'type'     => 'checkbox',
-                'title'    => __( 'Show Custom add', 'redux-framework-demo' ),
-                'default'  => '1'
-            ),
-            array(
                 'id'       => 'custom-add-content',
                 'type'     => 'editor',
                 'title'    => __( 'Create Custom Add Content', 'redux-framework-demo' )

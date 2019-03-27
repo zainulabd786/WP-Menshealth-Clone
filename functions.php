@@ -830,6 +830,56 @@ function wptutsplus_customize_colors() {
 add_action( 'wp_head', 'wptutsplus_customize_colors' );
 
 
+function card_with_add(){
+	$args = array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'orderby' => 'rand',
+        'order' => 'DESC',
+        'posts_per_page' => '1'
+    );
+    $query = new WP_Query ( $args );
+    if($query->have_posts()){
+    	while ( $query->have_posts () ) {
+      		$query->the_post (); ?>
+      		<div class="card card-with-add">
+      			<div class="row">
+      				<div class="col-md-8">
+      					<a href="<?= get_permalink(); ?>" class="card-image-container" style="width: auto;height: auto;">
+					   	<!-- <img src="image/lighthouse.jpg" class="card-img-top" alt=""> -->
+					   	<div class="side-add">
+						   	<?php the_post_thumbnail( array("740", "370") ); ?>
+						</div>
+					   </a>
+					   <div class="card-body">
+					      <div class="post-meta-item-wrapper">
+					         <div class="post-meta-item">
+					            <a href="#" class="btn btn-sm btn-"><?= get_the_category()[0]->name; ?></a>
+					         </div>
+					         <!-- end post meta item -->
+					      </div>
+					      <!-- end post meta item -->
+					      <h4 class="card-post-title"><a class="card-post-link" href="<?= get_permalink(); ?>"><?= get_the_title() ?></a>
+					      </h4>
+					      <p class="card-post-text"><?= substr(get_the_excerpt(), 0, 100)."..."; ?>
+					      </p>
+					      <!-- <div class="byline byline-listing"><span class="byline-author">By <a class="byline-name" href="#">Paul
+					         Schrodt</a></span>
+					      </div> -->
+					   </div>
+      				</div>
+      				<div class="col-md-4">
+      					<?= wp_get_attachment_image(138, 'original'); ?>
+      				</div>
+      			</div>
+			   <!-- end card body -->
+			</div><?php
+  		}
+	}
+}
+add_action("card_with_add", "card_with_add");
+
+
 
 
 

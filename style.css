@@ -11838,6 +11838,24 @@ video.wp-video-shortcode {
 .head-post-padding{
   padding: .9375rem 1.25rem 1.25rem;
 }
+.side-add{
+  width: 100%;
+  max-height: 370px;
+  overflow: hidden;
+}
+.side-add img{
+  width: 100%!important;
+}
+.collection-breaker-image img{
+  width: 100%;
+}
+.inner-post-image img{
+  height: auto;
+}
+.collection-breaker-image{
+  max-height: 250px;
+  overflow: hidden;
+}
 @media (max-width: 768px) {
   .big-logo-position{
     left: 0;
@@ -11856,5 +11874,8 @@ video.wp-video-shortcode {
   .container{
     padding-right: 0;
     padding-left: 0;
+  }
+  .addsen-container{
+    display: none;
   }
 }

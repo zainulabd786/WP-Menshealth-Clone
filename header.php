@@ -107,4 +107,51 @@
       </nav>
     </header>
     <main class="body-container-wrapper">
+      <div class="container">
+        <div class="top-listed-post-wrapper mb-4">
+                <?php 
+                  $args = array(
+                        'post_type' => 'post',
+                        'posts_per_page' => '5',
+                    );
+                    $query = new WP_Query( $args );
+                    if ( $query->have_posts() ) { 
+                            while ( $query->have_posts() ) {
+                   
+                              $query->the_post(); ?>
+
+                              <div class="top-listed-post-items">
+                                <a href="<?= the_permalink(); ?>" class="top-listed-post-link w-100">
+                                  <span class="top-listed-post-items-image post-image-hover d-block">
+                                   <?php the_post_thumbnail('medium'); ?>
+                                  </span>
+                                  <!-- end top listed-post items image -->
+                                  <span class="top-listed-post-title d-flex align-items-start">
+                                    <?= get_the_title(); ?>
+                                  </span>
+                                  <!-- end top listed post title -->
+                                </a>
+                                <!-- end top listed post link -->
+                              </div>
+                   
+                          <?php } // end while 
+                    } // end if
+                    wp_reset_postdata();
+                ?>      
+                      <!-- end top listed post items -->
+          </div>    
+        </div> 
+         
+          <div class="addsen-container">
+            <?php 
+              if($za_theme_opts['show-custom-add'] == "0"){
+                echo wp_get_attachment_image(137, 'original'); 
+              } else{
+                echo $za_theme_opts['custom-add-content'];
+              }
+            ?>
+          </div>
+
     	<div class="container">
+
+
