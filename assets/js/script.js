@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
-  console.log(za_theme_opts)
-  if(za_theme_opts['show-header-post'] == "0"){ /*makes logo bigger if header post is disabled*/
+  //console.log(za_script_vars);
+  if(za_script_vars.za_theme_opts['show-header-post'] == "0"){ /*makes logo bigger if header post is disabled*/
     $(".cover-story-logo .custom-logo").css("maxHeight", "150px")
   }
   /*Floating Video*/
@@ -29,33 +29,35 @@ jQuery(document).ready(function ($) {
     }
   /*Floating Video*/
 
-  /*Sticky Add on inner pages*/
-  try{
-    $window.on("scroll", function(){
-      let addheight = $(".add-container").outerHeight();
-      if($window.scrollTop() > addheight){
-        $(".add-container").addClass("stick-add");
-      } else{
-        $(".add-container").removeClass("stick-add");
-      }
+  if(za_script_vars.curr_page === "single.php"){
+    /*Sticky Add on inner pages*/
+    try{
+      $window.on("scroll", function(){
+        let addheight = $(".add-container").outerHeight();
+        if($window.scrollTop() > addheight){
+          $(".add-container").addClass("stick-add");
+        } else{
+          $(".add-container").removeClass("stick-add");
+        }
 
-      var docViewTop = $(window).scrollTop();
-      var docViewBottom = docViewTop + $(window).height();
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
 
-      var elemTop = $(".read-next-wrapper").offset().top;
-      var elemBottom = elemTop + $(".read-next-wrapper").height();
-      if((elemBottom <= docViewBottom) ){
-        $(".add-container").removeClass("stick-add");
-      } 
-     /* console.log($window.scrollTop(), addOffset)
-      if(initAddOffset == $window.scrollTop()){
-        $(".add-container").removeClass("stick-add");
-      }*/
-    })
-  } catch(e){
-      console.log(e)
+        var elemTop = $(".read-next-wrapper").offset().top;
+        var elemBottom = elemTop + $(".read-next-wrapper").height();
+        if((elemBottom <= docViewBottom) ){
+          $(".add-container").removeClass("stick-add");
+        } 
+       /* console.log($window.scrollTop(), addOffset)
+        if(initAddOffset == $window.scrollTop()){
+          $(".add-container").removeClass("stick-add");
+        }*/
+      })
+    } catch(e){
+        console.log(e)
+    }
+    /*Sticky Add on inner pages*/
   }
-  /*Sticky Add on inner pages*/
 
   $("#wp-custom-header img").length == 0 && $(".cover-story-wrapper").addClass("cover-100-vh")
 
