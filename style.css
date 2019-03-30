@@ -11856,6 +11856,10 @@ video.wp-video-shortcode {
   max-height: 250px;
   overflow: hidden;
 }
+.stick-add{
+  position: fixed;
+  top: 95px;
+}
 @media (max-width: 768px) {
   .big-logo-position{
     left: 0;

@@ -447,6 +447,7 @@ function twentyseventeen_scripts() {
 	//custom js
 	wp_enqueue_script( 'jQuery', get_theme_file_uri( '/assets/js/plugins/jquery.min.js' ), array() );
 	wp_enqueue_script( 'custom-js', get_theme_file_uri( '/assets/js/script.js' ), array("jQuery") );
+	wp_enqueue_script( 'visible-js', get_theme_file_uri( '/assets/js/jquery-visible-master/jquery.visible.min.js' ), array("jQuery") );
 	wp_localize_script( 'custom-js', 'za_theme_opts', $za_theme_opts );
 
 	// Load the dark colorscheme.
