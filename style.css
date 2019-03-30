@@ -11929,4 +11929,7 @@ video.wp-video-shortcode {
   .breaker-ad{
   	display: none;
   }
+  .footer-logo .custom-logo{
+    max-height: 40px;
+  }
 }

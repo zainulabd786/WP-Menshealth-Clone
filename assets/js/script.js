@@ -30,27 +30,31 @@ jQuery(document).ready(function ($) {
   /*Floating Video*/
 
   /*Sticky Add on inner pages*/
-  $window.on("scroll", function(){
-    let addheight = $(".add-container").outerHeight();
-    if($window.scrollTop() > addheight){
-      $(".add-container").addClass("stick-add");
-    } else{
-      $(".add-container").removeClass("stick-add");
-    }
+  try{
+    $window.on("scroll", function(){
+      let addheight = $(".add-container").outerHeight();
+      if($window.scrollTop() > addheight){
+        $(".add-container").addClass("stick-add");
+      } else{
+        $(".add-container").removeClass("stick-add");
+      }
 
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
+      var docViewTop = $(window).scrollTop();
+      var docViewBottom = docViewTop + $(window).height();
 
-    var elemTop = $(".read-next-wrapper").offset().top;
-    var elemBottom = elemTop + $(".read-next-wrapper").height();
-    if((elemBottom <= docViewBottom) ){
-      $(".add-container").removeClass("stick-add");
-    } 
-   /* console.log($window.scrollTop(), addOffset)
-    if(initAddOffset == $window.scrollTop()){
-      $(".add-container").removeClass("stick-add");
-    }*/
-  })
+      var elemTop = $(".read-next-wrapper").offset().top;
+      var elemBottom = elemTop + $(".read-next-wrapper").height();
+      if((elemBottom <= docViewBottom) ){
+        $(".add-container").removeClass("stick-add");
+      } 
+     /* console.log($window.scrollTop(), addOffset)
+      if(initAddOffset == $window.scrollTop()){
+        $(".add-container").removeClass("stick-add");
+      }*/
+    })
+  } catch(e){
+      console.log(e)
+  }
   /*Sticky Add on inner pages*/
 
   $("#wp-custom-header img").length == 0 && $(".cover-story-wrapper").addClass("cover-100-vh")

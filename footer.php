@@ -18,7 +18,7 @@
       <!-- end container -->
     </main>
     <!-- end body container wrapper -->
-    <footer class="footer-container bg-primary text-white py-4 mt-4">
+    <footer class="footer-container bg-primary text-white py-4 px-2 mt-4">
       <div class="container">
         <div class="row">
           <div class="col-12 col-lg-3 mb-4 mb-lg-0 d-flex flex-column flex-md-row flex-lg-column justify-content-between">
