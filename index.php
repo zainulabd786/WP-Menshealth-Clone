@@ -92,7 +92,7 @@ get_header(); ?>
 
 		<div class="collection-breaker-item-wrapper my-5">
 		            <div class="collection-breaker-header py-3">
-		              <h2><a href="#" class="collection-heading-title">Heart Health HQ</a></h2>
+		              <h3><a href="#" class="collection-heading-title">Heart Health HQ</a></h3>
 		            </div>
 		            <div class="collection-breaker-container row no-gutter"><?php
 

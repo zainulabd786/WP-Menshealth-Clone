@@ -38,7 +38,7 @@
           </div>
           <!-- end post heading -->
           <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-8">
               <div class="post-inner-content-wrapper ">
                 <div class="inner-post-image mb-4">
                   <?php the_post_thumbnail(  ); ?>
@@ -48,7 +48,7 @@
               <?php the_content() ?>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="add-container">
                 <?= wp_get_attachment_image(139, 'original'); ?>
               </div>
@@ -69,7 +69,7 @@
 			$next_post = get_next_post();
 		?>
 
-		<div class="read-next-wrapper mt-5 pb-4">
+		<div class="read-next-wrapper mt-3 pb-4">
           <div class="row">
             <div class="col-12 mb-3">
               <h1 class="heading-with-line"><span>
@@ -108,7 +108,79 @@
             <!-- end col -->
           </div>
           <!-- end row  -->
+    </div>
+
+    <div class="nutty-adds-wrapper">
+      <h5>Sponsored Content From Around The Web</h5>
+      <div class="row mb-3">
+        <div class="col-md-3 nutty-col">
+          <div class="nutty-add">
+            <div>
+              <img src="https://images.outbrainimg.com/transform/v3/eyJpdSI6ImQ4MjI4ODg0MmUxOGI4NTgxYTdkYmMyOGM1MWQ2NDM3MmRkYTU5YzM4MTk3OTlhM2I5ZTJhZTRmNWFmYzEzODkiLCJ3IjoyMTQsImgiOjEyOSwiZCI6MS41LCJjcyI6MCwiZiI6NH0.webp">
+            </div>
+            <span>Title of the Add Goes Here</span>
+          </div>
         </div>
+        <div class="col-md-3 nutty-col">
+          <div class="nutty-add">
+            <div>
+              <img src="https://images.outbrainimg.com/transform/v3/eyJpdSI6IjFiYzI1ZDIxM2MyMGJjMTM4MjUyMTQwOWMyYmEyYzViNTNmMTFkYzhkYzJlMGFlMWIxZTU1NzliMDNmMTgyZjciLCJ3IjoyMTQsImgiOjEyOSwiZCI6MS41LCJjcyI6MCwiZiI6NH0.webp">
+            </div>
+            <span>Title of the Add Goes Here</span>
+          </div>
+        </div>
+        <div class="col-md-3 nutty-col">
+          <div class="nutty-add">
+            <div>
+              <img src="https://images.outbrainimg.com/transform/v3/eyJpdSI6ImYwMGRlYjgzODJkMWE0MjBjMmM2YjBkMDAyNjY4ZDJmMDNhZTNkZTg3YWU0ZTljYmI5YzhiMmM3MWZjNWFmZGEiLCJ3IjoyMTQsImgiOjEyOSwiZCI6MS41LCJjcyI6MCwiZiI6NH0.webp">
+            </div>
+            <span>Title of the Add Goes Here</span>
+          </div>
+        </div>
+        <div class="col-md-3 nutty-col">
+          <div class="nutty-add">
+            <div>
+              <img src="https://images.outbrainimg.com/transform/v3/eyJpdSI6ImUzYzYxZmRmMDQzMTE4Y2Q5Nzg5MWMzOGQ0ZWUzZmRkMmFhZDBiY2QzODI5MjUxOWJhODAwMDVjOTMxODAxNzciLCJ3IjoyMTQsImgiOjEyOSwiZCI6MS41LCJjcyI6MCwiZiI6NH0.webp">
+            </div>
+            <span>Title of the Add Goes Here</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 nutty-col">
+          <div class="nutty-add">
+            <div>
+              <img src="https://images.outbrainimg.com/transform/v3/eyJpdSI6IjczNjhkNjFhOTBjMDQxZTEzYmRkOTIyYzE2NTk3OGRhNDcyYzg1Y2NkNzA3MzYwNDkxN2EzMmY1YmY4ZDc2ZDAiLCJ3IjoyMTQsImgiOjEyOSwiZCI6MS41LCJjcyI6MCwiZiI6NH0.webp">
+            </div>
+            <span>Title of the Add Goes Here</span>
+          </div>
+        </div>
+        <div class="col-md-3 nutty-col">
+          <div class="nutty-add">
+            <div>
+              <img src="https://images.outbrainimg.com/transform/v3/eyJpdSI6IjhmZWY5MmE1Yzg1OGNhZDlmMjNlMTYzOWY2NTI1ZWE1NzY1Njc4ZjFkMDM3YTY2NWY0ZDJhOTkyYWMwZmE1ZDEiLCJ3IjoyMTQsImgiOjEyOSwiZCI6MS41LCJjcyI6MCwiZiI6NH0.webp">
+            </div>
+            <span>Title of the Add Goes Here</span>
+          </div>
+        </div>
+        <div class="col-md-3 nutty-col">
+          <div class="nutty-add">
+            <div>
+              <img src="https://images.outbrainimg.com/transform/v3/eyJpdSI6IjBjYzVhZWM0MDBjZjM5ZDcxOWJlNzViMzAwZGE2ZmY1NzFhZjcxNmZhMDVmMGUzMmFhY2NjY2YwY2M4YjE4MmUiLCJ3IjoyMTQsImgiOjEyOSwiZCI6MS41LCJjcyI6MCwiZiI6NH0.webp">
+            </div>
+            <span>Title of the Add Goes Here</span>
+          </div>
+        </div>
+        <div class="col-md-3 nutty-col">
+          <div class="nutty-add">
+            <div>
+              <img src="https://images.outbrainimg.com/transform/v3/eyJpdSI6ImU5ZTYzYWRiYzViMDJlNjU1ZTQ5YTFjYTUyYTk2ZDQ2NWQ0ZTA5NmZjZDcyNWMwNjZiOTBiYmVlMjM0ZTg3YWUiLCJ3IjoyMTQsImgiOjEyOSwiZCI6MS41LCJjcyI6MCwiZiI6NH0.webp">
+            </div>
+            <span>Title of the Add Goes Here</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
         <?php 

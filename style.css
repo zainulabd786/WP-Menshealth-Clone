@@ -11196,7 +11196,7 @@ th {
 }
 
 .collection-breaker-image img {
-  max-height: 265px;
+  max-height: 186px;
   object-fit: cover;
   object-position: center top;
 }
@@ -11812,12 +11812,12 @@ video.wp-video-shortcode {
   display: none !important;
 }
 
-.ss-social-icons-container li a{
+#ss-floating-bar .ss-social-icons-container li a{
   width: 52px!important;
   -webkit-transition: width 0.5s!important; /* Safari */
   transition: width 0.5s!important;
 }
-.ss-social-icons-container li a:hover{
+#ss-floating-bar .ss-social-icons-container li a:hover{
   width: 70px!important;
 }
 
@@ -11860,6 +11860,29 @@ video.wp-video-shortcode {
   position: fixed;
   top: 95px;
 }
+.card-more-items img{
+	width: 100%!important;
+	height: 100%!important;
+}
+.card-next-items a{
+	width: 100%;
+}
+.card-next-items img{
+	width: 100%!important;
+	height: 100%!important;
+}
+
+/*______Nutty Adds_______*/
+.nutty-adds-wrapper .nutty-col{
+	border-right: 1px dotted #999;
+	color: #999;
+}
+.nutty-adds-wrapper .nutty-col:last-child{
+	border-right: none;
+}
+
+
+
 @media (max-width: 768px) {
   .big-logo-position{
     left: 0;
