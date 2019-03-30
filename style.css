@@ -11882,6 +11882,27 @@ video.wp-video-shortcode {
 }
 
 
+/*HOME BREAKER ADD*/
+.breaker-ad .line {
+  width: 100%;
+  height: 2px;
+  background-color: #999;
+  margin: 20px 0;
+}
+
+.breaker-ad .text{
+    margin-top: -40px;
+    background-color: #fff;
+    padding: 5px;
+    width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.breaker-ad{
+  border-bottom: 2px solid #999;
+}
+
 
 @media (max-width: 768px) {
   .big-logo-position{
@@ -11904,5 +11925,8 @@ video.wp-video-shortcode {
   }
   .addsen-container{
     display: none;
+  }
+  .breaker-ad{
+  	display: none;
   }
 }

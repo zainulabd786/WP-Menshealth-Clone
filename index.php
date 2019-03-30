@@ -144,38 +144,53 @@ get_header(); ?>
 
 		<?php
           	$categories = get_categories(); 
+
+          	$pc = 1;
  
 		    foreach ( $categories as $category ) {
 		 		$args = array(
 				    'cat' => $category->term_id,
 				    'post_type' => 'post',
-				    'posts_per_page' => '1',
+				    'posts_per_page' => '2',
 				);
 				$query = new WP_Query( $args );
 				if ( $query->have_posts() ) { 
           			while ( $query->have_posts() ) {
 			            $query->the_post();
-			            $cat_link = get_category_link($category->cat_ID); ?>
+			            $cat_link = get_category_link($category->cat_ID);
 
-			            <div id="post-<?php the_ID(); ?>" class="card">
-				            <a href="#" class="card-image-container"><?php the_post_thumbnail( array("500", "300") ); ?></a>
-				            <div class="card-body">
-				              <div class="post-meta-item-wrapper">
-				                <div class="post-meta-item">
-				                  <a href="<?= $cat_link ?>" class="btn btn-sm btn-"><?php echo $category->name; ?></a>
-				                </div>
-				                <!-- end post meta item -->
-				              </div>
-				              <!-- end post meta item -->
-				              <h4 class="card-post-title"><a class="card-post-link" href="<?= the_permalink() ?>"><?= get_the_title(); ?></a></h4>
-				              <p class="card-post-text"><?= get_the_excerpt(); ?></p>
-				              <div class="byline byline-listing"><span class="byline-author">By <a class="byline-name" href="#"><?= get_the_author(); ?></a></span>
-				              </div>
-				            </div>
-				            <!-- end card body -->
-				          </div>
-			 
-			        <?php } // end while 
+			            if($pc == 10){
+			            	do_action("card_with_add");
+			            }
+
+			            if($pc == 7){ ?>
+			            	<div class="breaker-ad pb-3">
+							  <div class="line"></div>
+							  <div class="text text-center">Advertisement - Continue Reading Below</div>
+								<div class="breaker-add-content text-center">
+									<?= wp_get_attachment_image(137, 'original');  ?>
+								</div>
+							</div><?php
+			            } else { ?>
+			            	<div id="post-<?php the_ID(); ?>" class="card">
+					            <a href="#" class="card-image-container"><?php the_post_thumbnail( array("500", "300") ); ?></a>
+					            <div class="card-body">
+					              <div class="post-meta-item-wrapper">
+					                <div class="post-meta-item">
+					                  <a href="<?= $cat_link ?>" class="btn btn-sm btn-"><?php echo $category->name; ?></a>
+					                </div>
+					                <!-- end post meta item -->
+					              </div>
+					              <!-- end post meta item -->
+					              <h4 class="card-post-title"><a class="card-post-link" href="<?= the_permalink() ?>"><?= get_the_title(); ?></a></h4>
+					              <p class="card-post-text"><?= get_the_excerpt(); ?></p>
+					              <div class="byline byline-listing"><span class="byline-author">By <a class="byline-name" href="#"><?= get_the_author(); ?></a></span>
+					              </div>
+					            </div>
+				            </div> <!-- end card body --><?php 
+			            }
+						$pc++; 
+					} // end while 
 			 
 				} // end if
 		    }
