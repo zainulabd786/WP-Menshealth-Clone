@@ -30,17 +30,27 @@ jQuery(document).ready(function ($) {
   /*Floating Video*/
 
   /*Sticky Add on inner pages*/
-  /*const initAddOffset = $(".add-container").offset().top;
   $window.on("scroll", function(){
-    let addOffset = $(".add-container").offset().top;
-    if($window.scrollTop() > addOffset){
+    let addheight = $(".add-container").outerHeight();
+    if($window.scrollTop() > addheight){
       $(".add-container").addClass("stick-add");
-    }
-    console.log($window.scrollTop(), addOffset)
-    if(initAddOffset == $window.scrollTop()){
+    } else{
       $(".add-container").removeClass("stick-add");
     }
-  })*/
+
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(".read-next-wrapper").offset().top;
+    var elemBottom = elemTop + $(".read-next-wrapper").height();
+    if((elemBottom <= docViewBottom) ){
+      $(".add-container").removeClass("stick-add");
+    } 
+   /* console.log($window.scrollTop(), addOffset)
+    if(initAddOffset == $window.scrollTop()){
+      $(".add-container").removeClass("stick-add");
+    }*/
+  })
   /*Sticky Add on inner pages*/
 
   $("#wp-custom-header img").length == 0 && $(".cover-story-wrapper").addClass("cover-100-vh")

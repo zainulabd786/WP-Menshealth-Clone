@@ -42,7 +42,7 @@ get_header(); ?>
           <!-- end custom video content -->
     </div>
 
-    <div class="post-full-width mt-4">
+    <div class="post-full-width">
 
     	<!----------------------------------------------------------- POST WITH ADD --------------------------------------------------------->
     	<?php do_action("card_with_add"); ?>
@@ -50,8 +50,11 @@ get_header(); ?>
 
           <?php
           	$categories = get_categories(); 
+
+          	$count = 1;
  
 		    foreach ( $categories as $category ) {
+		    	if($count > 2) break;
 		 		$args = array(
 				    'cat' => $category->term_id,
 				    'post_type' => 'post',
@@ -85,6 +88,7 @@ get_header(); ?>
 			        <?php } // end while 
 			 
 				} // end if
+				$count++;
 		    }
 			// Use reset to restore original query.
 			wp_reset_postdata();
