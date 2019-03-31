@@ -202,7 +202,7 @@
 	          if($query->have_posts()){
 	          	while ($query->have_posts()) {
 	          		$query->the_post(); ?>
-	          		<div class="col-12 col-md-4 mb-4 pm-md-0">
+	          		<div class="col-12 overflow-hidden col-md-4 mb-4 pm-md-0">
 		              <div class="card card-more-items">
 		                <a href="<?= get_permalink() ?>" class="card-image-container"><?php the_post_thumbnail('medium'); ?></a>
 		                <div class="card-body">

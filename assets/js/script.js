@@ -30,6 +30,15 @@ jQuery(document).ready(function ($) {
   /*Floating Video*/
 
   if(za_script_vars.curr_page === "single.php"){
+    
+    $(".wp-block-image, .inner-post-image").append($(".ss-inline-share-wrapper").clone())
+
+    $(".wp-block-image, .inner-post-image").hover(function() {
+      $(".ss-left-sidebar").css("display","block");
+    }, function(){
+      $(".ss-left-sidebar").css("display","none");
+    })
+
     /*Sticky Add on inner pages*/
     try{
       $window.on("scroll", function(){
@@ -43,8 +52,8 @@ jQuery(document).ready(function ($) {
         var docViewTop = $(window).scrollTop();
         var docViewBottom = docViewTop + $(window).height();
 
-        var elemTop = $(".read-next-wrapper").offset().top;
-        var elemBottom = elemTop + $(".read-next-wrapper").height();
+        var elemTop = $(".fb-comments").offset().top;
+        var elemBottom = elemTop + $(".fb-comments").height();
         if((elemBottom <= docViewBottom) ){
           $(".add-container").removeClass("stick-add");
         } 
