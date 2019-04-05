@@ -13,7 +13,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+	<?php $current_post_id = get_the_ID(); ?>
       <div class="post-full-width mt-4">
           <div class="post-heading">
             <h3 class="inner-post-title"><?= get_the_title(); ?></h3>
@@ -185,7 +185,7 @@
 
         <?php 
         	$category = get_the_category();
-        	$args = array('posts_per_page' => 3, 'category'=> $category[0]->slug);
+        	$args = array('posts_per_page' => 10, 'category'=> $category[0]->slug);
         	$query = new WP_Query($args);
         ?>
         <div class="read-more-wrapper mt-5 pb-4">
@@ -196,29 +196,111 @@
             </div>
             <!-- end col -->
           </div>
-          <!-- end row -->
-          <div style="overflow: hidden;" class="row"> <?php
-
+          <!-- end row --><?php
+          		$count = 1;
 	          if($query->have_posts()){
 	          	while ($query->have_posts()) {
-	          		$query->the_post(); ?>
-	          		<div class="col-12 overflow-hidden col-md-4 mb-4 pm-md-0">
-		              <div class="card card-more-items">
-		                <a href="<?= get_permalink() ?>" class="card-image-container"><?php the_post_thumbnail('medium'); ?></a>
-		                <div class="card-body">
-		                  <h5 class="card-post-title"><a class="card-post-link" href="<?= get_permalink() ?>"><?= get_the_title() ?></a></h5>
-		                </div>
-		                <!-- end card body -->
-		              </div>
-		              <!-- end card -->
+	          		$query->the_post(); 
+	          		if($count == 1){ ?>
+	          			<div class="row"><!-- 1st row -->
+	          				<div class="col-md-9">
+	          					<div class="row"><!-- 1st row inner --><?php
+	          		}
+	          		if($count <= 2){ ?>
+	          			<div class="col-12 overflow-hidden col-md-6 mb-4 pm-md-0">
+			              <div class="card card-more-items">
+			                <a href="<?= get_permalink() ?>" class="card-image-container"><?php the_post_thumbnail('medium'); ?></a>
+			                <div class="card-body">
+			                  <h5 class="card-post-title"><a class="card-post-link" href="<?= get_permalink() ?>"><?= get_the_title() ?></a></h5>
+			                </div>
+			                <!-- end card body -->
+			              </div>
+			              <!-- end card -->
+			            </div><?php
+	          		}
+	          		if($count == 3){ ?>
 
-		            </div><?php
+			            </div><!-- 1st row inner -->
+			            <div class="row"><!-- 2nd row inner --><?php
+	          		}
+	          		if($count <= 4 && $count > 2){ ?>
+	          			<div class="col-12 overflow-hidden col-md-6 mb-4 pm-md-0">
+			              <div class="card card-more-items">
+			                <a href="<?= get_permalink() ?>" class="card-image-container"><?php the_post_thumbnail('medium'); ?></a>
+			                <div class="card-body">
+			                  <h5 class="card-post-title"><a class="card-post-link" href="<?= get_permalink() ?>"><?= get_the_title() ?></a></h5>
+			                </div>
+			                <!-- end card body -->
+			              </div>
+			              <!-- end card -->
+			            </div><?php
+	          		}
+	          		if($count == 5){ ?>
+
+			            </div><!-- 2nd row inner -->
+			        	</div><!-- col-md-9 -->
+			        	<div class="col-md-3">
+							<?= wp_get_attachment_image(138, 'original'); ?>
+			        	</div>
+			        	</div><!-- 1st row -->
+
+			        	<div class="row"><!-- 2nd row -->
+			            <?php
+	          		}
+	          		if($count > 4 && $count <= 7 ){ ?>
+	          			<div class="col-12 overflow-hidden col-md-4 mb-4 pm-md-0">
+			              <div class="card card-more-items">
+			                <a href="<?= get_permalink() ?>" class="card-image-container"><?php the_post_thumbnail('medium'); ?></a>
+			                <div class="card-body">
+			                  <h5 class="card-post-title"><a class="card-post-link" href="<?= get_permalink() ?>"><?= get_the_title() ?></a></h5>
+			                </div>
+			                <!-- end card body -->
+			              </div>
+			              <!-- end card -->
+			            </div><?php
+	          		}
+	          		if($count == 7){ ?>
+	          			</div><!-- 2nd row -->
+	          			<div class="row"><!-- 3rd row --><?php
+	          		}
+	          		if($count > 7){ ?>
+	          			<div class="col-12 overflow-hidden col-md-4 mb-4 pm-md-0">
+			              <div class="card card-more-items">
+			                <a href="<?= get_permalink() ?>" class="card-image-container"><?php the_post_thumbnail('medium'); ?></a>
+			                <div class="card-body">
+			                  <h5 class="card-post-title"><a class="card-post-link" href="<?= get_permalink() ?>"><?= get_the_title() ?></a></h5>
+			                </div>
+			                <!-- end card body -->
+			              </div>
+			              <!-- end card -->
+			            </div><?php
+	          		}
+	          		if($count == 10){ ?>
+	          			</div><!-- 3rd row --><?php
+	          		}
+		            $count++;
 	          	}
 	          } ?>
-            
-          </div>
-          <!-- end row -->
+        </div><!-- read more wrapper -->
+
+        <div class="addsen-container row-full">
+            <?= wp_get_attachment_image(137, 'original') ?>
         </div>
+
+        <div class="seo-tag-list-wrapper py-4">
+          <ul class="nav seo-tag-list justify-content-center"><?php
+          	$tags = get_the_tags($current_post_id);
+          	if($tags){
+          			foreach ($tags as $tag) { ?>
+	          		<li class="seo-tag"><a href="/tag/<?= $tag->slug; ?>" class="sco-link"><?= $tag->name; ?></a></li><?php
+	          	}          	
+	        } ?>
+            
+          </ul>
+        </div>
+        <!-- <pre>
+        	<?php //print_r(get_the_tags($current_post_id)); echo $current_post_id; ?>
+        </pre> -->
 
 
 </article><!-- #post-## -->

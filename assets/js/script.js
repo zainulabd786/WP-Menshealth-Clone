@@ -33,6 +33,9 @@ jQuery(document).ready(function ($) {
     
     $(".wp-block-image, .inner-post-image").append($(".ss-inline-share-wrapper").clone())
 
+
+    $("#ss-floating-bar").detach().appendTo(".wp-block-image, .inner-post-image")
+
     $(".wp-block-image, .inner-post-image").hover(function() {
       $(".ss-left-sidebar").css("display","block");
     }, function(){
@@ -44,9 +47,9 @@ jQuery(document).ready(function ($) {
       $window.on("scroll", function(){
         let addheight = $(".add-container").outerHeight();
         if($window.scrollTop() > addheight){
-          $(".add-container").addClass("stick-add");
+          $(".add-container").addClass("stick-add").removeClass("absolute-add-container")
         } else{
-          $(".add-container").removeClass("stick-add");
+          $(".add-container").removeClass("stick-add")
         }
 
         var docViewTop = $(window).scrollTop();
@@ -55,7 +58,7 @@ jQuery(document).ready(function ($) {
         var elemTop = $(".fb-comments").offset().top;
         var elemBottom = elemTop + $(".fb-comments").height();
         if((elemBottom <= docViewBottom) ){
-          $(".add-container").removeClass("stick-add");
+          $(".add-container").removeClass("stick-add").addClass("absolute-add-container");
         } 
        /* console.log($window.scrollTop(), addOffset)
         if(initAddOffset == $window.scrollTop()){

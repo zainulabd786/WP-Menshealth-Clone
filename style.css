@@ -11860,20 +11860,30 @@ video.wp-video-shortcode {
   max-height: 250px;
   overflow: hidden;
 }
+.add-container{
+  position: relative;
+}
 .stick-add{
   position: fixed;
   top: 95px;
 }
+
+.absolute-add-container{
+  position: absolute;
+  bottom: 265px;
+}
+
+
 .card-more-items img{
 	width: 100%!important;
-	height: 100%!important;
+	height: auto!important;
 }
 .card-next-items a{
 	width: 100%;
 }
 .card-next-items img{
 	width: 100%!important;
-	height: 100%!important;
+	height: auto!important;
 }
 
 /*______Nutty Adds_______*/
@@ -11907,8 +11917,59 @@ video.wp-video-shortcode {
   border-bottom: 2px solid #999;
 }
 
-.ss-left-sidebar{
+
+.card.card-more-items a {
+    width: 100%;
+    height: 180px;
+}
+
+ .row-full{
+ width: 100vw;
+ position: relative;
+ margin-left: -50vw;
+ left: 50%;
+}
+
+
+.ss-inline-share-wrapper .ss-facebook-color{
+  background-color: transparent;
+}
+.ss-inline-share-wrapper .ss-facebook{
+  background-color: #3b5998!important;
+}
+.ss-inline-share-wrapper .ss-facebook-color .ss-network-label{
+  color: #3b5998!important;
+}
+
+.ss-inline-share-wrapper .ss-twitter-color{
+  background-color: transparent;
+}
+.ss-inline-share-wrapper .ss-twitter{
+  background-color: #1da1f2!important;
+}
+.ss-inline-share-wrapper .ss-twitter-color .ss-network-label{
+  color: #1da1f2!important;
+}#DB4437
+
+.ss-inline-share-wrapper .ss-google-color, .ss-inline-share-wrapper .ss-googleplus-color{
+  background-color: transparent!important;
+}
+.ss-inline-share-wrapper .ss-googleplus{
+  background-color: #DB4437!important;
+}
+.ss-inline-share-wrapper .ss-googleplus-color .ss-network-label{
+  color: #DB4437!important;
+}
+
+
+#ss-floating-bar{
+  position: absolute;
+  top: 0!important;
+  left: -50px!important;
   display: none;
+}
+.wp-block-image, .inner-post-image{
+  position: relative;
 }
 
 @media (max-width: 768px) {
