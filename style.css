@@ -11961,6 +11961,10 @@ video.wp-video-shortcode {
   color: #DB4437!important;
 }
 
+.fa-bars:before{
+  font-size: 20px!important;
+}
+
 
 #ss-floating-bar{
   position: absolute;
@@ -11991,11 +11995,8 @@ video.wp-video-shortcode {
     padding-right: 0;
     padding-left: 0;
   }
-  .addsen-container{
+  .addsen-container, .add-container, .breaker-ad{
     display: none;
-  }
-  .breaker-ad{
-  	display: none;
   }
   .footer-logo .custom-logo{
     max-height: 40px;
